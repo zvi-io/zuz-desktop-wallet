@@ -29,7 +29,7 @@
         "accounts": [{
             "address": "rNPRNzBB92BVpAhhZr4iXDTveCgV5Pofm9",
             "currencies": ["BTC", "ILS"],
-            "hotwallets": []
+            "hotwallets": [],
 			"domain": "rippleisrael.co.il"
             }],
 			
@@ -61,7 +61,7 @@
         "accounts": [{
             "address": "rcoef87SYMJ58NAFx7fNM5frVknmvHsvJ",
             "currencies": ["XAU"],
-            "hotwallets": [rh7WFDNxbZ7zfpvpUh5kjrfpGPkDodZFvr],
+            "hotwallets": ["rh7WFDNxbZ7zfpvpUh5kjrfpGPkDodZFvr"],
             "domain": "gatehub.net"
             }]			
     }, {
