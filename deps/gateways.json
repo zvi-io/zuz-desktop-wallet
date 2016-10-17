@@ -1,39 +1,38 @@
 [
-    {
+	   {
         "name": "Bitstamp",
         "accounts": [{
             "address": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
             "currencies": ["BTC", "USD", "EUR"],
             "hotwallets": ["rrpNnNLKrartuEqfJGpqyDwPj1AFPg9vn1"]
-            }]
+            }],
+        "domain": "bitstamp.net"
+			
     }, {
         "name": "RippleChina",
         "accounts": [{
             "address": "razqQKzJRdB4UxFPWf5NEpEG3WMkmwgcXA",
             "currencies": ["CNY"],
             "hotwallets": ["r45dBj4S3VvMMYXxr9vHX4Z4Ma6ifPMCkK"]
-            }]
+            }],
+        "domain": "iripplechina.com"			
     }, {
         "name": "rippleCN",
         "accounts": [{
             "address": "rnuF96W4SZoCJmbHYBFoJZpR8eCaxNvekK",
             "currencies": ["BTC", "CNY"],
             "hotwallets": ["rNaptDNfFXo1quhKwMaNPf66iwPqA8YLky", "rno91tGDJeRcnM7EMXj8KG9UTyxRGMMz8s"]
-            }]
+            }],
+		"domain": "ripplecn.com"	
     }, {
         "name": "Payroutes",
         "accounts": [{
             "address": "rNPRNzBB92BVpAhhZr4iXDTveCgV5Pofm9",
             "currencies": ["BTC", "ILS"],
             "hotwallets": []
-            }]
-    }, {
-        "name": "SnapSwap",
-        "accounts": [{
-            "address": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
-            "currencies": ["USD", "BTC", "EUR", "GBP"],
-            "hotwallets": ["rUQTpMqAF5jhykj4FExVeXakrZpiKF6cQV", "rhasPLL5GaXzBh5amQkN7Dr1SNF4Whb2ZT"]
-            }]
+			"domain": "rippleisrael.co.il"
+            }],
+			
     }, {
         "name": "TheRock",
         "accounts": [{
@@ -42,62 +41,11 @@
             "hotwallets": ["rUeFPRGNjtcbtezyQKKiDcS1eQyYLQ1gcr"]
             }]
     }, {
-        "name": "WisePass",
-        "accounts": [{
-            "address": "rPDXxSZcuVL3ZWoyU82bcde3zwvmShkRyF",
-            "currencies": ["BTC", "LTC", "USD"],
-            "hotwallets": ["r9xAQUyqs53QH2PLxe7iFbNbpU2RA9QtZx"]
-            }]
-    }, {
-        "name": "RippleUnion",
-        "accounts": [{
-            "address": "r3ADD8kXSUKHd6zTCKfnKT3zV9EZHjzp1S",
-            "currencies": ["CAD"],
-            "hotwallets": []
-            }]
-    },{
-        "name": "Justcoin",
-        "accounts": [{
-            "address": "rJHygWcTLVpSXkowott6kzgZU6viQSVYM1",
-            "currencies": ["LTC", "BTC", "STR", "EUR", "NOK"],
-            "hotwallets": []
-            }]
-    }, {
-        "name": "DotPayco",
-        "accounts": [{
-            "address": "rM8199qFwspxiWNZRChZdZbGN5WrCepVP1",
-            "currencies": ["CNY"],
-            "hotwallets": []
-            }]
-    }, {
-        "name": "RippleSingapore",
-        "accounts": [{
-            "address": "r9Dr5xwkeLegBeXq6ujinjSBLQzQ1zQGjH",
-            "currencies": ["XAU", "XAG", "XPT", "SGD"],
-            "hotwallets": []
-            }]
-    }, {
         "name": "Bitso",
         "accounts": [{
             "address": "rG6FZ31hDHN1K5Dkbma3PSB5uVCuVVRzfn",
             "currencies": ["MXN", "BTC"],
             "hotwallets": ["rHZaDC6tsGN2JWGeXhjKL6664RNCq5hu4B"]
-            }]
-    }, {
-        "name": "Coinex",
-        "accounts": [{
-            "address": "rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc",
-            "currencies": ["NZD", "BTC", "USD", "AUD", "STR"],
-            "hotwallets": ["rGAmy1w1ENyTJ9BCAEicYyRM2Yk1iWZ7Z5"],
-            "domain": "coinexgateway.com"
-            }]
-    }, {
-        "name": "RippleLatAm",
-        "accounts": [{
-            "address": "rP5ShE8dGBH6hHtNvRESdMceen36XFBQmh",
-            "currencies": ["UYU", "PEN", "MXN", "BTC", "LTC", "USD", "CLP", "ARS"],
-            "hotwallets": ["raoFdQah8c8owTj4TPMr8o1WntnXybXCgB"],
-            "domain": "ripplelatam.com"
             }]
     }, {
         "name": "GBI",
@@ -109,15 +57,13 @@
             "domain": "goldbullioninternational.com"
             }]
     }, {
-        "name": "LakeBTC",
+        "name": "BPG",
         "accounts": [{
-            "address": "rpDMez6pm6dBve2TJsmDpv7Yae6V5Pyvy2",
-            "currencies": ["USD"]
-            }],
-        "hotwallets": [
-          "rP9gFJKqKGWdR4n6XjdsUPqmJfXkg4kSgZ"
-        ],
-        "domain": "lakebtc.com"
+            "address": "rcoef87SYMJ58NAFx7fNM5frVknmvHsvJ",
+            "currencies": ["XAU"],
+            "hotwallets": [rh7WFDNxbZ7zfpvpUh5kjrfpGPkDodZFvr],
+            "domain": "gatehub.net"
+            }]			
     }, {
         "name": "RippleFox",
         "accounts": [{
@@ -144,8 +90,48 @@
             "address": "rfNZPxoZ5Uaamdp339U9dCLWz2T73nZJZH",
             "currencies": ["BRL"]
             }],
-        "hotwallets": ["r37FUji17jCgCZvAUc8m5YqXquwHpgwa9q"],
+        "hotwallets": ["rDb6qVhDdAybg9ARF2Yy64AAdk17Bi4M2q"],
         "domain": "rippex.net"
+    }, {
+        "name": "Rippex Bridge",
+        "accounts": [{
+            "address": "rpeKCr6Cc5mCj8GUUL4fPjeH5YXG3X1mYf",
+            "currencies": ["BTC"]
+            }],
+        "hotwallets": ["rf6eUJWaaV71XPzLBxiwiZ1gb9PR1CcW71"],
+        "domain": "rippex.net"
+    }, {
+        "name": "Gatehub",
+        "accounts": [{
+            "address": "rhub8VRN55s94qWKDv6jmDy1pUykJzF3wq",
+            "currencies": ["USD", "EUR"]
+            }],
+        "hotwallets": ["rhotcWYdfn6qxhVMbPKGDF3XCKqwXar5J4"],
+        "domain": "gatehub.net"
+    }, {
+        "name": "Gatehub Fifth ETH",
+        "accounts": [{
+            "address": "ETH:rcA8X3TVMST1n3CJeAdGk1RdRCHii7N2h",
+            "currencies": ["ETH"]
+            }],
+        "hotwallets": ["rhPGyJfM8bGjfNCiXLL7WRU8VZ5Cw4kHVe"],
+        "domain": "gatehub.net"
+    }, {
+        "name": "Gatehub Fifth ETC",
+        "accounts": [{
+            "address": "ETH:rDAN8tzydyNfnNf2bfUQY6iR96UbpvNsze",
+            "currencies": ["ETC"]
+            }],
+        "hotwallets": ["rsXAifedPJ3ESTgSHJ5XzrXw6oYD8Uha7x"],
+        "domain": "gatehub.net"
+    }, {
+        "name": "Gatehub Fifth REP",
+        "accounts": [{
+            "address": "ETH:rckzVpTnKpP4TJ1puQe827bV3X4oYtdTP",
+            "currencies": ["REP"]
+            }],
+        "hotwallets": ["rhdT3DksUegs6SDztyLRaCNP2ukfbHKy5g"],
+        "domain": "gatehub.net"
     }, {
         "name": "RippleMarketJapan",
         "accounts": [{
@@ -163,26 +149,12 @@
         "hotwallets": [],
         "domain": "ripplex.co.jp"
     }, {
-        "name": "Ripula-UK",
+        "name": "Mr. Ripple",
         "accounts": [{
-            "address": "rBycsjqxD8RVZP5zrrndiVtJwht7Z457A8",
-            "currencies": ["GBP"]
+            "address": "rB3gZey7VWHYRqJHLoHDEJXJ2pEPNieKiS",
+            "currencies": ["JPY", "DOG", "ADA", "RPL", "DAO", "HKD", "USD", "STR", "ETH", "LTC", "ETC", "BTC", "RJP"]
             }],
-        "hotwallets": ["rUR5QVHqFxRa8TSQawc1M6jKj7BvKzbHek"],
-        "domain": "ripula.co.uk"
+        "hotwallets": [],
+        "domain": "mr-ripple.com"
     }, {
-      "name": "ice3x",
-      "accounts": [{
-            "address": "rLpKwneVStAVwPhgCgNJVFCePq5J3xaNpN",
-            "currencies": ["ZAR"]
-            }],
-        "domain": "www.ice3x.co.za"
-    }, {
-      "name": "Senderas",
-      "accounts": [{
-            "address": "rJypGvB8H2JBj1QVYofUTU8kFtWLspNWqs",
-            "currencies": ["GBP"]
-            }],
-        "domain": "www.senderas.com"
-    }
 ]
