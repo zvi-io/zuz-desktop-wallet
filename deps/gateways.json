@@ -31,7 +31,7 @@
             "currencies": ["BTC", "ILS"],
             "hotwallets": [],
 			"domain": "rippleisrael.co.il"
-            }],
+            }]
 			
     }, {
         "name": "TheRock",
