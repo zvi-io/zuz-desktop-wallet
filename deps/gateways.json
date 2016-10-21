@@ -1,5 +1,5 @@
 [
-	   {
+       {
         "name": "Bitstamp",
         "accounts": [{
             "address": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
@@ -7,7 +7,7 @@
             "hotwallets": ["rrpNnNLKrartuEqfJGpqyDwPj1AFPg9vn1"]
             }],
         "domain": "bitstamp.net"
-			
+            
     }, {
         "name": "RippleChina",
         "accounts": [{
@@ -15,7 +15,7 @@
             "currencies": ["CNY"],
             "hotwallets": ["r45dBj4S3VvMMYXxr9vHX4Z4Ma6ifPMCkK"]
             }],
-        "domain": "iripplechina.com"			
+        "domain": "iripplechina.com"            
     }, {
         "name": "rippleCN",
         "accounts": [{
@@ -23,16 +23,16 @@
             "currencies": ["BTC", "CNY"],
             "hotwallets": ["rNaptDNfFXo1quhKwMaNPf66iwPqA8YLky", "rno91tGDJeRcnM7EMXj8KG9UTyxRGMMz8s"]
             }],
-		"domain": "ripplecn.com"	
+        "domain": "ripplecn.com"    
     }, {
         "name": "Payroutes",
         "accounts": [{
             "address": "rNPRNzBB92BVpAhhZr4iXDTveCgV5Pofm9",
             "currencies": ["BTC", "ILS"],
             "hotwallets": [],
-			"domain": "rippleisrael.co.il"
+            "domain": "rippleisrael.co.il"
             }]
-			
+            
     }, {
         "name": "TheRock",
         "accounts": [{
@@ -63,7 +63,7 @@
             "currencies": ["XAU"],
             "hotwallets": ["rh7WFDNxbZ7zfpvpUh5kjrfpGPkDodZFvr"],
             "domain": "gatehub.net"
-            }]			
+            }]          
     }, {
         "name": "RippleFox",
         "accounts": [{
@@ -95,7 +95,7 @@
     }, {
         "name": "Rippex Bridge",
         "accounts": [{
-            "address": "rpeKCr6Cc5mCj8GUUL4fPjeH5YXG3X1mYf",
+            "address": "rKxKhXZCeSDsbkyB8DVgxpjy5AHubFkMFe",
             "currencies": ["BTC"]
             }],
         "hotwallets": ["rf6eUJWaaV71XPzLBxiwiZ1gb9PR1CcW71"],
