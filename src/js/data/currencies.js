@@ -12,7 +12,7 @@ module.exports = [
   // Fiat - Official ISO-4217
   // From USD until HKD, the order is based on https://www.bullionvault.com/gold-news/all_the_money_in_the_world_102720093.
   // After HKD, the order is alphabetical.
-  {value: 'USD', name: 'US Dollar', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 4},
+/*  {value: 'USD', name: 'US Dollar', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 4},
   {value: 'EUR', name: 'Euro', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 3},
   {value: 'JPY', name: 'Japanese Yen', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
   {value: 'CNY', name: 'Chinese Yuan', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
@@ -189,9 +189,25 @@ module.exports = [
   {value: 'XAU (-0.5%pa)', name: 'Gold', display: false, custom_trade_currency_dropdown: false, standard_precision: 2, order: 0},
   {value: 'XAG', name: 'Silver', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
   {value: 'XPT', name: 'Platinum', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
-
+*/
   // Cryptocurrencies
   {value: 'BTC', name: 'Bitcoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 2},
   {value: 'LTC', name: 'Litecoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 1},
-  {value: 'STR', name: 'Stellars', display: true, custom_trade_currency_dropdown: true, standard_precision: 0, order: 0}
+  {value: 'ZDK', name: 'ZDK', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
+  {value: 'JUD', name: 'JUD', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
+  {value: 'DGB', name: 'DigiByte', display: true, custom_trade_currency_dropdown: true, standard_precision: 2, order: 0},
+  {value: 'GRS', name: 'Groestlcoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'MON', name: 'Monacoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'SYS', name: 'Syscoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'VTC', name: 'Vertcoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'LTC', name: 'Litecoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'PPC', name: 'Peercoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'NMC', name: 'Namecoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'ETC', name: 'Ethereum Classic', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'EXP', name: 'Expanse', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'DSH', name: 'Dash', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'EMN', name: 'Emunah', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'ETH', name: 'Ethereum', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'VIA', name: 'Viacoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'XMR', name: 'Monero', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0}
 ];

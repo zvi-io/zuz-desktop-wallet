@@ -97,11 +97,16 @@ TradeTab.prototype.angular = function(module)
       var d = $scope.userBlob.data;
       if (!settings.hasSetting($scope.userBlob, 'trade_currency_pairs')) {
         $scope.pairs_query = [
-          { name: 'XRP/USD.rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q' },
-          { name: 'XRP/USD.rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B' },
-          { name: 'XRP/JPY.r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN' },
-          { name: 'BTC.rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B/XRP' },
-          { name: 'BTC.rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XRP' }
+          { name: 'XRP/ZDK.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/JUD.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/XMR.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'BTC.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny/XRP' },
+          { name: 'XRP/VTC.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/VIA.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/ETH.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/EMN.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/DSH.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
+          { name: 'XRP/EXP.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' }
         ];
       }
       else {
@@ -632,7 +637,7 @@ TradeTab.prototype.angular = function(module)
       $scope.tradeChartJsonCounter = JSON.stringify(counter);
 
       $scope.tradeEmbeddedHTML = $sce.trustAsHtml("<iframe "
-        + "src='http://ripplecharts.com/embed/pricechart?theme=light&type=candlestick&counter=" + $scope.tradeChartJsonCounter + "=&base=" + $scope.tradeChartJsonBase + "&live=true' "
+        + "src='http://charts.zuz.life/embed/pricechart?theme=light&type=candlestick&counter=" + $scope.tradeChartJsonCounter + "=&base=" + $scope.tradeChartJsonBase + "&live=true' "
         + "height='300' width='100%' frameborder='0' />");
     }
 

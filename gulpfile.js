@@ -344,14 +344,19 @@ gulp.task('deps', function () {
 gulp.task('build', function() {
   var nw = new NwBuilder({
     files: [BUILD_DIR + '**/**'],
-    platforms: ['win', 'osx', 'linux'],
+    //platforms: ['win64', 'win32', 'osx64', 'linux32', 'linux64'],
+    //platforms: ['linux64'],
+    platforms: ['win64'],
     // TODO: Use these instead of the nested app/package.json values
     appName: meta.name + '-' + meta.version,
     appVersion: meta.version,
     buildDir: PACKAGES_FOLDER,
     zip: true,
+    zipOptions: { store: true },  // store = 0 compression, otherwise zipOptions: { zlib: { level: 6 } }
+    mergeZip: true,  // false will create <app>.exe with separate package.nw - true will create monolithic <app>.exe
     cacheDir: TMP_DIR,
-    version: '0.12.3',
+//    version: '0.12.3',
+    version: '0.23.6',
     // TODO: timestamped versions
     macIcns: './res/dmg/xrp_ripple_logo.icns',
     winIco: './res/dmg/xrp_ripple_logo.ico'
