@@ -44,6 +44,8 @@ AdvancedTab.prototype.angular = function(module)
     $scope.editAcctOptions = false;
     $scope.max_tx_network_fee_human = ripple.Amount.from_json($scope.options.max_tx_network_fee).to_human();
 
+
+
     $scope.saveSetings = function() {
       // force serve ports to be number
       _.forEach($scope.options.connection.servers, function(s) {

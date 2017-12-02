@@ -45,7 +45,8 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   }
 
   // TODO make this wallet specific
-  $scope.onlineMode = !!store.get('onlineMode');
+//zvi force online mode //  $scope.onlineMode = !!store.get('onlineMode');
+  $scope.onlineMode = 1; 
 
   // Remember the onlineMode switch value and handle the connection
   $scope.switchOnlineMode = function(){
