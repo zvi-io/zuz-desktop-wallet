@@ -11,8 +11,8 @@ var Options = {
     local_signing: true,
 
     servers: [
-      { host: 's-west.ripple.com', port: 443, secure: true },
-      { host: 's-east.ripple.com', port: 443, secure: true }
+      { host: 's-west.zvi.io', port: 443, secure: false },
+      { host: 's-east.zvi.io', port: 443, secure: false }
     ]
   },
 
