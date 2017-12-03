@@ -181,7 +181,7 @@ app.run(['$rootScope', '$route', '$routeParams', 'rpNW',
   function ($rootScope, $route, $routeParams, rpNW)
   {
     // This is the desktop client
-    $rootScope.productName = 'Zuz Desktop Wallet';
+    $rootScope.productName = 'Zvi Desktop Wallet';
 
     // Global reference for debugging only (!)
     if ("object" === typeof rippleclient) {
@@ -247,7 +247,7 @@ var win = gui.Window.get();
 // Edit menu
 if (process.platform === "darwin") {
   var mb = new gui.Menu({type: 'menubar'});
-  mb.createMacBuiltin('Zuz Desktop Wallet', {
+  mb.createMacBuiltin('Zvi Desktop Wallet', {
     hideEdit: false
   });
   gui.Window.get().menu = mb;

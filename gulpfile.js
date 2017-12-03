@@ -114,7 +114,7 @@ gulp.task('webpack:dist', function() {
         filename: "app.js"
       },
       plugins: [
-        new BannerPlugin('Zuz Desktop Wallet v' + meta.version + '\nCopyright (c) ' + new Date().getFullYear() + ' ' + meta.author.name + '\nLicensed under the ' + meta.license + ' license.'),
+        new BannerPlugin('Zvi Desktop Wallet v' + meta.version + '\nCopyright (c) ' + new Date().getFullYear() + ' ' + meta.author.name + '\nLicensed under the ' + meta.license + ' license.'),
         new UglifyJsPlugin({
           compress: {
             warnings: false

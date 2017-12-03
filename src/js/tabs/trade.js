@@ -79,7 +79,7 @@ TradeTab.prototype.angular = function(module)
 
       // Remember user preference on Convert vs. Trade
       if (!settings.getSetting($scope.userBlob, 'rippleExchangeSelectionTrade', false)) {
-        $scope.userBlob.set('/clients/rippletradecom/rippleExchangeSelectionTrade', true);
+        $scope.userBlob.set('/clients/zvi/zviExchangeSelectionTrade', true);
       }
     }
 
@@ -637,7 +637,7 @@ TradeTab.prototype.angular = function(module)
       $scope.tradeChartJsonCounter = JSON.stringify(counter);
 
       $scope.tradeEmbeddedHTML = $sce.trustAsHtml("<iframe "
-        + "src='http://charts.zuz.life/embed/pricechart?theme=light&type=candlestick&counter=" + $scope.tradeChartJsonCounter + "=&base=" + $scope.tradeChartJsonBase + "&live=true' "
+        + "src='http://charts.zvi.io/embed/pricechart?theme=light&type=candlestick&counter=" + $scope.tradeChartJsonCounter + "=&base=" + $scope.tradeChartJsonBase + "&live=true' "
         + "height='300' width='100%' frameborder='0' />");
     }
 

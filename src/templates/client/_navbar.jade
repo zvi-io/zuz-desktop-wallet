@@ -4,7 +4,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
       .navbar-header
         .navbar-toggle.snapper-toggle
           a(href="").fa.fa-bars
-        a.navbar-brand#logo(href="#/", title="Zuz.Life")
+        a.navbar-brand#logo(href="#/", title="Zvi.io")
       .collapse.navbar-collapse
         ul.nav.navbar-nav.topMenu
           li#nav-wallet(ng-class="{active: $route.current.mainMenu == 'wallet'}")
@@ -23,7 +23,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                 ng-switch='serverStatus')
               span(ng-switch-when='disconnected'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
-                  l10n-rp-popover-content="Disconnected from the Ripple network")
+                  l10n-rp-popover-content="Disconnected from the Zvi Network")
               span(ng-switch-when='highLoad'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
                   l10n-rp-popover-content="Network fees are currently higher than your maximum. Fee: {{ fee | rpamount }} XRP. <a href='#/advanced'>Change fees</a>")
@@ -32,10 +32,10 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                   l10n-rp-popover-content="'Network fees are currently higher than normal. Fee: {{ fee | rpamount }} XRP'")
               span(ng-switch-when='lowLoad'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
-                  l10n-rp-popover-content="Connected to the Zuz network. Fee: {{ fee | rpamount }} XRP")
+                  l10n-rp-popover-content="Connected to the Zvi Network. Fee: {{ fee | rpamount }} XRP")
               span(ng-switch-when='connected'
                   rp-popover, rp-popover-placement="bottom", rp-popover-trigger="hover", rp-popover-delay
-                  l10n-rp-popover-content="Connected to the Zuz network.")
+                  l10n-rp-popover-content="Connected to the Zvi Network.")
 
           li.account(rp-popover, rp-popover-placement="left", rp-popover-trigger="hover", rp-popover-delay
               l10n-rp-popover-content="{{copyTooltip}}")

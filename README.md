@@ -2,17 +2,17 @@
 
 ## Install Dependencies
 
-- Fork and clone the zuz-desktop-wallet repository
+- Fork and clone the zvi-desktop-wallet repository
 - Run `npm install`
 - Download [nw.js](https://github.com/nwjs/npm-installer)
 
 ## Build
 
-- In the zuz-desktop-wallet repository, make a copy of the `config_example.js` file and name it `config.js`
+- In the zvi-desktop-wallet repository, make a copy of the `config_example.js` file and name it `config.js`
 - Run `gulp` in your command line for development
 
 - Run `gulp packages` in your command line for the production ready client
-- Your desktop client is in the `packages/ZuzDesktopWallet` directory
+- Your desktop client is in the `packages/ZviDesktopWallet` directory
 
 ### Note
 - There are breaking changes in the c++ API when using node version 4. You should use node version 0.12.

@@ -1,11 +1,11 @@
 {
-  "name": "ZuzDesktopWallet",
+  "name": "ZviDesktopWallet",
   "version": "1.5.0",
-  "description": "Desktop client for the Zuz Network",
+  "description": "Desktop client for the Zvi Network",
   "author": {
     "name": "Zvi ben Yaakov",
-    "email": "ZuzLife.github@infosoc.net",
-    "url": "http://www.zuz.life/"
+    "email": "zvi.io.github@infosoc.net",
+    "url": "http://zvi.io/"
   },
   "node-remote": "http://localhost:3000",
   "main": "http://localhost:3000",
@@ -60,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ZuzLife/zuz-desktop-wallet.git"
+    "url": "git://github.com/zvi-io/zvi-desktop-wallet.git"
   },
   "readmeFilename": "README",
   "devDependencies": {
