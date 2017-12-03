@@ -78,7 +78,7 @@ TradeTab.prototype.angular = function(module)
       $scope.pairs_query = settings.getSetting($scope.userBlob, 'trade_currency_pairs');
 
       // Remember user preference on Convert vs. Trade
-      if (!settings.getSetting($scope.userBlob, 'rippleExchangeSelectionTrade', false)) {
+      if (!settings.getSetting($scope.userBlob, 'zviExchangeSelectionTrade', false)) {
         $scope.userBlob.set('/clients/zvi/zviExchangeSelectionTrade', true);
       }
     }
@@ -97,16 +97,16 @@ TradeTab.prototype.angular = function(module)
       var d = $scope.userBlob.data;
       if (!settings.hasSetting($scope.userBlob, 'trade_currency_pairs')) {
         $scope.pairs_query = [
-          { name: 'XRP/ZDK.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/JUD.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/XMR.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'BTC.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny/XRP' },
-          { name: 'XRP/VTC.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/VIA.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/ETH.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/EMN.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/DSH.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' },
-          { name: 'XRP/EXP.rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny' }
+          { name: 'XRP/EM2.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/DGB.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/XMR.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'BTC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8/XRP' },
+          { name: 'XRP/VTC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/VIA.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/ETH.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/EMN.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/DSH.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/GRS.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' }
         ];
       }
       else {

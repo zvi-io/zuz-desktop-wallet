@@ -1,12 +1,12 @@
 [
        {
-        "name": "Geula.Digital",
+        "name": "BaseX",
         "accounts": [{
-            "address": "rPGytpGikJHRzgMBrspXbXQqdnMqhTf9ny",
+            "address": "rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8",
             "currencies": ["BTC", "ZDK", "JUD", "XMR", "VIA", "ETH", "EMN", "DSH", "BCC", "EXP", "ETC", "NMC", "PPC", "LTC", "VTC", "SYS", "MON", "GRS", "DGB" ],
             "hotwallets": []
             }],
-        "domain": "geula.digital"
+        "domain": "basex.domain"
             
     }
 
