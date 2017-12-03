@@ -24,7 +24,8 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
               .lbl.col-xs-8
                 a(href="", ng-click="entry.show=!entry.show")
                   i.icon-ripple-logo
-                  | XRP – ZVIs from the Zvi Network (not the XRP of the Ripple Network)
+                  | XRP == ZVIs from the Zvi Network 
+                  span (not the XRP of the Ripple Network)
               .balance.col-xs-2
                 span(ng-show="account.Balance") {{ account.Balance | rpamount:{precision: 20, min_precision: 5, max_sig_digits: 20} }}
                 span(ng-hide="account.Balance") 0
@@ -48,7 +49,7 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
                   rp-popover-placement="bottom"
                   l10n-rp-popover-title="Reserve amount"
                   rp-popover-trigger="hover"
-                  l10n-data-content="Minimum amount of XRP required to fund your account. You cannot spend the reserve.")
+                  l10n-data-content="Minimum amount of ZVI (XRP) required to fund your account. You cannot spend the reserve.")
               .balance.col-xs-2
                 span(ng-show="account.reserve") {{ account.reserve | rpamount:{precision: 20, min_precision: 6, max_sig_digits: 20} }}
                 span(ng-hide="account.reserve") 0
