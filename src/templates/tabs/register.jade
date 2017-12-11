@@ -26,11 +26,21 @@ section.col-xs-12.content(ng-controller="RegisterCtrl")
         label.hide(for='register_password', l10n) Wallet file
 
         .form-group(ng-class="{'field-error': 'weak' === strength}")
+          label(for='register_email', l10n) Email
+          input.form-control#register_email(
+          name='register_email', type='text', autocomplete="off"
+          ng-model="email", required, rp-focus)
+        .form-group(ng-class="{'field-error': 'weak' === strength}")
+          label(for='register_username', l10n) Username
+          input.form-control#register_username(
+          name='register_username', type='text', autocomplete="off"
+          ng-model="username", required)
+        .form-group(ng-class="{'field-error': 'weak' === strength}")
           label(for='register_password', l10n) Password
           input.form-control#register_password(
           name='register_password1', type='password', autocomplete="off"
           ng-model="password1"
-          rp-strong-password, required, rp-same-in-set="password2", rp-focus)
+          rp-strong-password, required, rp-same-in-set="password2")
           p(ng-show="strength=='weak'")
             span(l10n) Your password is weak. It is not a mix of letters, numbers and symbols.
         .form-group(ng-class="{'field-error': registerForm.register_password2.$error.rpSameInSet && registerForm.register_password2.$dirty}")
@@ -108,8 +118,11 @@ section.col-xs-12.content(ng-controller="RegisterCtrl")
             a(href="", l10n) Show
           a(href="", ng-click="showPassword=false", ng-show="showPassword==true", l10n) Hide
       .secret
-        p.important(l10n) Ripple address
+        p
+        p
+        p.important(l10n) Zvi address
         p.key {{address}}
+        p
         p.important(l10n) Secret key:
         p.key(ng-show="showSecret==true") {{keyOpen}}
         p.key(ng-hide="showSecret==true") {{key}}

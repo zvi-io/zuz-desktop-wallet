@@ -209,5 +209,17 @@ module.exports = [
   {value: 'EMN', name: 'Emunah', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'ETH', name: 'Ethereum', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'VIA', name: 'Viacoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
-  {value: 'XMR', name: 'Monero', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0}
+  {value: 'XMR', name: 'Monero', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'BTG', name: 'Bitcion Gold', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'BCH', name: 'Bitcoin Cash', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'IOT', name: 'IOTA', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'XLM', name: 'Stellar Lumens', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'NAV', name: 'NAV Coin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'GUP', name: 'Matchpool', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'BSD', name: 'BitSend', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'XBC', name: 'Bitcoin Plus', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'LOG', name: 'Woodcoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'EMC', name: 'Einsteinium', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'MAG', name: 'Imagination', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0}
+
 ];

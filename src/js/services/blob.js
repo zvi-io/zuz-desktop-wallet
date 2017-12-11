@@ -109,7 +109,7 @@ module.factory('rpBlob', ['$rootScope', function ($scope)
     blob.data = {
       masterkey: opts.masterkey,
       account_id: opts.account,
-      contacts: [],
+      contacts: [{'name': 'BaseX', 'view': '', 'address': 'rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8', 'dt': ''}],
       created: (new Date()).toJSON()
     };
 

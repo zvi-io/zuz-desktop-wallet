@@ -44,6 +44,7 @@ RegisterTab.prototype.angular = function (module) {
       //$scope.mode = 'register_empty_wallet1';
       $scope.showMasterKeyInput = false;
       $scope.submitLoading = false;
+      $scope.email = '';
 
       if ($scope.registerForm) $scope.registerForm.$setPristine(true);
     };
@@ -66,7 +67,8 @@ RegisterTab.prototype.angular = function (module) {
     $scope.register = function()
     {
       $id.register({
-        'username': 'local',
+        'email': $scope.email/*'local'*/,
+        'username': $scope.username/*'local'*/,
         'password': $scope.password1,
         'masterkey': $scope.masterkey,
         'walletfile': $scope.walletfile

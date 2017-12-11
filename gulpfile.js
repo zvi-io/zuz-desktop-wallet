@@ -344,8 +344,8 @@ gulp.task('deps', function () {
 gulp.task('build', function() {
   var nw = new NwBuilder({
     files: [BUILD_DIR + '**/**'],
-    platforms: ['win64', 'win32', 'osx64', 'osx32', 'linux32', 'linux64'],
-    //platforms: ['linux64'],
+    //platforms: ['win64', 'win32', 'osx64', 'osx32', 'linux32', 'linux64'],
+    platforms: ['linux64'],
     //platforms: ['win64'],
     // TODO: Use these instead of the nested app/package.json values
     appName: meta.name + '-' + meta.version,

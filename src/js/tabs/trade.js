@@ -97,16 +97,31 @@ TradeTab.prototype.angular = function(module)
       var d = $scope.userBlob.data;
       if (!settings.hasSetting($scope.userBlob, 'trade_currency_pairs')) {
         $scope.pairs_query = [
-          { name: 'XRP/EM2.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/EMC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'XRP/DGB.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
-          { name: 'XRP/XMR.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/MAG.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'BTC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8/XRP' },
           { name: 'XRP/VTC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'XRP/VIA.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'XRP/ETH.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'XRP/EMN.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
           { name: 'XRP/DSH.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
-          { name: 'XRP/GRS.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' }
+          { name: 'XRP/GRS.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/BTG.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/BCH.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/IOT.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/XMR.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/XLM.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/MON.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/NAV.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/GUP.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/BSD.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/EXP.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/XBC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/LOG.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/NMC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/PPC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' },
+          { name: 'XRP/LTC.rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8' }
         ];
       }
       else {

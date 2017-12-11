@@ -68,11 +68,11 @@ msgstr "Why Use Ripple Trade?"
 
 #: src/jade/client/index.jade:66
 msgid "Home of XRP -"
-msgstr "Home of XRP -"
+msgstr "Home of ZVI -"
 
 #: src/jade/client/index.jade:67
 msgid "the best place to buy and sell XRP"
-msgstr "the best place to buy and sell XRP"
+msgstr "the best place to buy and sell ZVI"
 
 #: src/jade/client/index.jade:71
 msgid "Free -"
@@ -80,7 +80,7 @@ msgstr "Free -"
 
 #: src/jade/client/index.jade:72
 msgid "no fees to sign up and use Ripple Trade"
-msgstr "no fees to sign up and use Ripple Trade"
+msgstr "no fees to sign up and use the Zvi Network"
 
 #: src/jade/client/index.jade:76
 msgid "No Middlemen -"
@@ -411,7 +411,7 @@ msgstr "Error code: No destination [tecNO_DST]."
 #: src/jade/messages/sendconvert/confirmation.jade:25
 msgid ""
 "Error code: Insufficient XRP sent to destination [tecNO_DST_INSUF_XRP]."
-msgstr "Error code: Insufficient XRP sent to destination [tecNO_DST_INSUF_XRP]."
+msgstr "Error code: Insufficient ZVI sent to destination [tecNO_DST_INSUF_XRP]."
 
 #: src/jade/directives/transactionerror.jade:105
 msgid "Your payment failed: {{engine_result}} - {{engine_result_message}}"
@@ -1032,7 +1032,7 @@ msgstr "Welcome to Ripple Trade! Your account needs to be activated. You can act
 msgid ""
 "Have another user send XRP to your Ripple name "
 "(~{{userCredentials.username}}).&#32{{1}}"
-msgstr "Have another user send XRP to your Ripple name (~{{userCredentials.username}}).&#32{{1}}"
+msgstr "Have another user send ZVI to your Ripple name (~{{userCredentials.username}}).&#32{{1}}"
 
 #: src/jade/tabs/brl.jade:24 src/jade/tabs/eur.jade:24
 #: src/jade/tabs/gold.jade:24 src/jade/tabs/jpy.jade:24
@@ -1487,7 +1487,7 @@ msgstr "Not a valid amount."
 msgid ""
 "You are either trying to convert too little or too much XRP.Minimum amount "
 "is 0.000001 XRP and maximum amount is 100 billion XRP."
-msgstr "You are either trying to convert too little or too much XRP.Minimum amount is 0.000001 XRP and maximum amount is 100 billion XRP."
+msgstr "You are either trying to convert too little or too much ZVI.Minimum amount is 0.000001 ZVI and maximum amount is 100 billion ZVI."
 
 #: src/jade/tabs/exchange.jade:42 src/jade/tabs/send.jade:96
 #: src/jade/tabs/trust.jade:103
@@ -1560,7 +1560,7 @@ msgstr "Enter a Ripple name or contact"
 
 #: src/jade/tabs/fund.jade:33 src/jade/tabs/trust.jade:73
 msgid "Account does not meet the minimum XRP reserve."
-msgstr "Account does not meet the minimum XRP reserve."
+msgstr "Account does not meet the minimum ZVI reserve."
 
 #: src/jade/tabs/fund.jade:36 src/jade/tabs/trust.jade:76
 msgid "Please enter a Ripple name, contact, or address."
@@ -1583,7 +1583,7 @@ msgstr "Amount field is required"
 msgid ""
 "XRP can be sent without extending trust. If you really want to trust in XRP,"
 " please use XRR currency code."
-msgstr "XRP can be sent without extending trust. If you really want to trust in XRP, please use XRR currency code."
+msgstr "ZVI can be sent without extending trust. If you really want to trust in ZVI, please use XRR currency code."
 
 #: src/jade/tabs/fund.jade:53 src/jade/tabs/trust.jade:85
 #: src/jade/tabs/trust.jade:108
@@ -1608,7 +1608,7 @@ msgstr "Cancel"
 
 #: src/jade/tabs/fund/menu.jade:3
 msgid "{{1}}XRP"
-msgstr "{{1}}XRP"
+msgstr "{{1}}ZVI"
 
 #: src/jade/tabs/fund/menu.jade:6
 msgid "Featured gateways"
@@ -1805,7 +1805,7 @@ msgstr "Final balance"
 
 #: src/jade/tabs/history.jade:176
 msgid "XRP Balance Change"
-msgstr "XRP Balance Change"
+msgstr "ZVI Balance Change"
 
 #: src/jade/tabs/history.jade:177
 msgid "{{effect.currency}} Balance Change"
@@ -2127,7 +2127,7 @@ msgstr "Welcome to Ripple Trade"
 #: src/jade/tabs/recover.jade:5 src/jade/tabs/register.jade:7
 #: src/jade/tabs/register.jade:139 src/jade/tabs/register.jade:186
 msgid "Trade hundreds of assets, from XRP to crypto to gold to fiat."
-msgstr "Trade hundreds of assets, from XRP to crypto to gold to fiat."
+msgstr "Trade hundreds of assets, from ZVI to crypto to gold to fiat."
 
 #: src/jade/tabs/login.jade:15 src/jade/tabs/login.jade:31
 msgid "Log In"
@@ -2798,13 +2798,13 @@ msgstr "Amount must be greater than zero."
 msgid ""
 "You are either trying to send too little or too much XRP.Minimum amount is "
 "0.000001 XRP and maximum amount is 100 billion XRP."
-msgstr "You are either trying to send too little or too much XRP.Minimum amount is 0.000001 XRP and maximum amount is 100 billion XRP."
+msgstr "You are either trying to send too little or too much ZVI.Minimum amount is 0.000001 ZVI and maximum amount is 100 billion ZVI."
 
 #: src/jade/tabs/send.jade:97
 msgid ""
 "Recipient does not allow XRP payments. Are you sure you want to send XRP "
 "anyway?"
-msgstr "Recipient does not allow XRP payments. Are you sure you want to send XRP anyway?"
+msgstr "Recipient does not allow ZVI payments. Are you sure you want to send ZVI anyway?"
 
 #: src/jade/tabs/send.jade:99
 msgid ""
@@ -2814,13 +2814,13 @@ msgstr "{{send.recipient | rpcontactname}}trusts you for {{send.trust_limit | rp
 
 #: src/jade/tabs/send.jade:103
 msgid "Send XRP"
-msgstr "Send XRP"
+msgstr "Send ZVI"
 
 #: src/jade/tabs/send.jade:107
 msgid ""
 "Destination account is unfunded; send at least {{send.xrp_deficiency | "
 "rpamount}} XRP to fund it.{{1}}"
-msgstr "Destination account is unfunded; send at least {{send.xrp_deficiency | rpamount}} XRP to fund it.{{1}}"
+msgstr "Destination account is unfunded; send at least {{send.xrp_deficiency | rpamount}} ZVI to fund it.{{1}}"
 
 #: src/jade/tabs/send.jade:114
 msgid "Checking"
@@ -3061,7 +3061,7 @@ msgstr "Must be greater than zero"
 msgid ""
 "Minimum amount of XRP you can send is a drop (0.000001) and the maximum is "
 "100 billion XRPs."
-msgstr "Minimum amount of XRP you can send is a drop (0.000001) and the maximum is 100 billion XRPs."
+msgstr "Minimum amount of ZVI you can send is a drop (0.000001) and the maximum is 100 billion ZVIs."
 
 #: src/jade/tabs/trade.jade:160
 msgid "Price of Each"
@@ -3563,7 +3563,7 @@ msgstr "Balances"
 
 #: src/jade/tabs/widgets/balances.jade:12
 msgid "Balance<br>{{ account.Balance | rpamount }} XRP"
-msgstr "Balance<br>{{ account.Balance | rpamount }} XRP"
+msgstr "Balance<br>{{ account.Balance | rpamount }} ZVI"
 
 #: src/jade/tabs/widgets/balances.jade:16
 msgid "Reserve"
@@ -3577,11 +3577,11 @@ msgstr "Reserve amount"
 msgid ""
 "Minimum amount of XRP required to fund your account. You cannot spend the "
 "reserve."
-msgstr "Minimum amount of XRP required to fund your account. You cannot spend the reserve."
+msgstr "Minimum amount of ZVI required to fund your account. You cannot spend the reserve."
 
 #: src/jade/tabs/widgets/balances.jade:20
 msgid "Reserve amount<br>{{ account.reserve | rpamount }} XRP"
-msgstr "Reserve amount<br>{{ account.reserve | rpamount }} XRP"
+msgstr "Reserve amount<br>{{ account.reserve | rpamount }} ZVI"
 
 #: src/jade/tabs/widgets/balances.jade:26
 msgid "Available amount"
@@ -3589,11 +3589,11 @@ msgstr "Available amount"
 
 #: src/jade/tabs/widgets/balances.jade:26
 msgid "Total amount of XRP in your account minus the reserve amount."
-msgstr "Total amount of XRP in your account minus the reserve amount."
+msgstr "Total amount of ZVI in your account minus the reserve amount."
 
 #: src/jade/tabs/widgets/balances.jade:28
 msgid "Available amount<br>{{ account.max_spend | rpamount }} XRP"
-msgstr "Available amount<br>{{ account.max_spend | rpamount }} XRP"
+msgstr "Available amount<br>{{ account.max_spend | rpamount }} ZVI"
 
 #: src/jade/tabs/widgets/balances.jade:35
 msgid ""

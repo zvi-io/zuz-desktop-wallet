@@ -3,7 +3,7 @@
         "name": "BaseX",
         "accounts": [{
             "address": "rMJSrGBUCTYnJN9kPNdgEm2hAfuC6bfPi8",
-            "currencies": ["BTC", "ZDK", "JUD", "XMR", "VIA", "ETH", "EMN", "DSH", "BCC", "EXP", "ETC", "NMC", "PPC", "LTC", "VTC", "SYS", "MON", "GRS", "DGB" ],
+            "currencies": ["BTC", "BTG", "BCH", "IOT", "ZDK", "JUD", "XMR", "XLM", "EMC", "VIA", "ETH", "EMN", "DSH", "MAG", "NAV", "GUP", "BSD", "XBC", "LOG", "EXP", "ETC", "NMC", "PPC", "LTC", "VTC", "SYS", "MON", "GRS", "DGB" ],
             "hotwallets": []
             }],
         "domain": "basex.domain"

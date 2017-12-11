@@ -16,6 +16,8 @@ var Options = {
     ]
   },
 
+  ilpAdminPass: "passwordtoilpapi",
+  
   // Number of transactions each page has in balance tab notifications
   transactions_per_page: 50,
 
