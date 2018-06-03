@@ -13,7 +13,7 @@
 
 ## Build
 
-- The production build process is currently not working in Windows
+- The production build process is currently not working on Windows
 - Run `gulp packages` in your command line for the production ready client
 - Your desktop client is in the `packages/ZviDesktopWallet` directory
 
