@@ -12,6 +12,7 @@ var gulp = require('gulp'),
   jadeL10n = require('jade-l10n'),
   NwBuilder = require('nw-builder'),
   runSequence = require('run-sequence'),
+  gutil = require('gulp-util'),
 
   meta = require('./package.json'),
   languages = require('./l10n/languages.json').active;
@@ -320,6 +321,7 @@ gulp.task('deps', function () {
     //.pipe($.if('*.js', $.ngAnnotate()))
     // Uglifies js files
     .pipe($.if('*.js', $.uglify()))
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     // Minifies css files
     .pipe($.if('*.css', $.csso()))
     // Brings back the previously filtered HTML files
