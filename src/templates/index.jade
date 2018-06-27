@@ -59,6 +59,18 @@ html(ng-app='rp', ng-controller='AppCtrl', ng-class='[$route.current.tabClass, $
         a(href='http://caniuse.com/websockets') http://caniuse.com/websockets
 
     // JAVASCRIPT
+    // Super Global Functions
+    script.
+        var native_currency = "ZVI"
+        console.log("Translate Function is working")
+        function translateCoin(coin) {
+           if(coin === 'XRP'){
+               return native_currency
+           } else {
+                return coin
+           }
+        }
+
     script(src='js/vendor.js')
 
     // build:js js/deps.js
