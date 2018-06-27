@@ -20,7 +20,17 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   reset();
 
   var account;
-
+  // Global function for translating currencies
+  var native_currency = "ZVI";
+  $scope.translateCoin = function(coin){
+      if(coin === 'XRP'){
+          return native_currency
+      } else if (coin === 'ripple'){
+        return 'zvi'
+      } else {
+          return coin
+      }
+  };
   // Global sequence variable to be incremented after every transaction
   $scope.$watch('userBlob', function() {
     if ($scope.userBlob.data && $scope.userCredentials.username) {

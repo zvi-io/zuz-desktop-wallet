@@ -36,7 +36,7 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
                   rp-popover-placement="bottom"
                   l10n-rp-popover-title="Available amount"
                   rp-popover-trigger="hover"
-                  l10n-data-content="Total amount of ZVI (XRP) in your account minus the reserve amount.")
+                  l10n-data-content="Total amount of ZVI in your account minus the reserve amount.")
               .balance.col-xs-2
                 span(ng-show="account.max_spend") {{account.max_spend | rpamount:{precision: 20 , min_precision: 6, max_sig_digits: 20} }}
                 span(ng-hide="account.max_spend") 0
@@ -48,7 +48,7 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
                   rp-popover-placement="bottom"
                   l10n-rp-popover-title="Reserve amount"
                   rp-popover-trigger="hover"
-                  l10n-data-content="Minimum amount of ZVI (XRP) required to fund your account. You cannot spend the reserve.")
+                  l10n-data-content="Minimum amount of ZVI required to fund your account. You cannot spend the reserve.")
               .balance.col-xs-2
                 span(ng-show="account.reserve") {{ account.reserve | rpamount:{precision: 20, min_precision: 6, max_sig_digits: 20} }}
                 span(ng-hide="account.reserve") 0
