@@ -3,8 +3,10 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
     include ../tabs/banner/_unfunded
 
   .row.row-padding-small.head.hidden-xs
-    .col-xs-3.col-sm-3.col-md-3(l10n) Contact
-    .col-xs-6.col-sm-5.col-md-7(l10n) Zvi network address
+    .col-xs-3.col-sm-3.col-md-3(l10n)
+      b Contact
+    .col-xs-6.col-sm-5.col-md-7(l10n)
+      b Address
     .col-xs-12.col-sm-4.col-md-2.text-right
       a.btn.btn-block.btn-success.btn-sm.sign(ng-click='toggle_form()', ng-disabled='addform_visible', l10n) Add contact
   hr
@@ -26,7 +28,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               | This contact already exists.
         .form-group
           div
-            label(for='address_desktop', l10n) Zvi network address
+            label(for='address_desktop', l10n) {{capitalize(native_currency)}} Address
             .spinnerEnabledInput
               input.form-control.input-lg.address#address_desktop(
                 name='address_desktop', type='text', step='any'
@@ -40,9 +42,9 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
                 rp-autofill='$routeParams.to', rp-autofill-on='addform_visible = true'
                 required)
             .errorGroup(rp-errors='address_desktop')
-              .error(rp-error-on='required', l10n) Please enter a Zvi network address.
-              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same Zvi network address and/or the same Destination tag.
-              .error(rp-error-on='rpDest', l10n) Not a valid Zvi network address.
+              .error(rp-error-on='required', l10n) Please enter a {{capitalize(native_currency)}} address.
+              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{capitalize(native_currency)}} address and/or the same Destination tag.
+              .error(rp-error-on='rpDest', l10n) Not a valid {{capitalize(native_currency)}} address.
         .form-group
           div
             label(for='dt_desktop', l10n) Destination tag
@@ -57,7 +59,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               rp-autofill='$routeParams.dt')
             .errorGroup(rp-errors='dt_desktop')
               .error(rp-error-on='rpStdt', l10n) Invalid destination tag
-              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same Zvi network address and/or the same Destination tag.
+              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{capitalize(native_currency)}} address and/or the same Destination tag.
         .row
           .col-xs-8.col-sm-8.col-md-9.text-left
             button.btn.btn-success.btn-block.submit.custom-btn(type='submit', ng-disabled='addForm.$invalid', l10n) Add contact
@@ -70,7 +72,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
       span.name(ng-hide='editing') {{entry.name}}
     .col-xs-12.col-sm-6.col-md-6(ng-hide='editing')
       div
-        b {{entry.address | rpaddressorigin}}: {{entry.address}}
+        span {{entry.address | rpaddressorigin}}: {{entry.address}}
     .col-xs-6.col-sm-3.col-md-3.text-right.pull-right(ng-hide='editing')
       .row
         .col-xs-4.col-md-4.col-sm-4(ng-hide='editing')
@@ -104,7 +106,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               ng-enter="update($index)")
             .errorGroup(rp-errors='editaddress')
               .error(rp-error-on='rpUnique', l10n) You already have this address.
-              .error(rp-error-on='rpDest', l10n) Not a valid address.
+              .error(rp-error-on='rpDest', l10n) Not a valid {{capitalize(native_currency)}} address.
             .form-group
               label(for="contact_dt", l10n) Destination tag
               input.form-control.dt.inline#contact_dt(

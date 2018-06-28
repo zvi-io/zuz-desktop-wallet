@@ -20,15 +20,18 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   reset();
 
   var account;
+  $scope.capitalize = function(string){
+      return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  };
   // Global function for translating currencies
-  var native_currency = "ZVI";
+  $scope.native_currency = "ZVI";
   $scope.translateCoin = function(coin){
-      if(coin === 'XRP'){
-          return native_currency
-      } else if (coin === 'ripple'){
-        return 'zvi'
-      } else {
-          return coin
+      switch(coin) {
+          case 'XRP':
+          case 'ripple':
+              return $scope.native_currency;
+          default:
+              return coin;
       }
   };
   // Global sequence variable to be incremented after every transaction

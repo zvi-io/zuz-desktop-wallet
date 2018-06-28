@@ -45,8 +45,7 @@ module.controller('NavbarCtrl', ['$scope', '$element', '$compile', 'rpId',
       $scope.serverStatus = 'connected';
     }
   }
-
-  $scope.copyTooltip = "Click to copy your ripple address";
+  $scope.copyTooltip = "Click to copy your " + $scope.capitalize($scope.native_currency) + " address";
   $scope.copyFeedback = null;
   $scope.copy = function() {
     angular.element("ul.nav .text-copy-helper").select();

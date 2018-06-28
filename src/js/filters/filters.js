@@ -334,11 +334,11 @@ module.filter('rprange', function() {
   };
 });
 
-module.filter('rpaddressorigin', function() {
+module.filter('rpaddressorigin', ['$rootScope', function($scope) {
   return function(recipient) {
-    return !isNaN(Base.decode_check([0, 5], recipient, 'bitcoin')) ? 'bitcoin' : 'ripple';
+    return !isNaN(Base.decode_check([0, 5], recipient, 'bitcoin')) ? 'bitcoin' : $scope.native_currency.toLowerCase();
   };
-});
+}]);
 
 module.filter('rpheavynormalize', function () {
   return function (value, maxLength) {
