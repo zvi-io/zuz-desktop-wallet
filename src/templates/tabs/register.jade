@@ -5,19 +5,19 @@ section.col-xs-12.content(ng-controller="RegisterCtrl")
       h2(l10n) Create new account
 
       .form-group
-        a.btn.btn-block.btn-link(ng-click='goTo("/login")', l10n) Open existing account
+        a.btn.btn-block.btn-link(ng-click='goTo("/login")', l10n) Login to existing account
 
       .form-group
-        a.btn.btn-block.btn-default(ng-click='fileInputClick()', l10n) Create an empty account
+        a.btn.btn-block.btn-default(ng-click='fileInputClick()', l10n) Create a new account
 
       .form-group
-        a.btn.btn-block.btn-default(ng-click='mode="register_with_secret"', l10n) Create a new account with a secret key
+        a.btn.btn-block.btn-default(ng-click='mode="register_with_secret"', l10n) Restore account from a secret key
     .row
       button.btn.btn-block.btn-cancel(ng-click='goTo("/login")', l10n) Back to home
 
   .row.auth-form-container.col-sm-offset-2.col-sm-8.col-md-offset-3.col-md-6(ng-show='mode=="register_empty_wallet"')
     .auth-form-wrapper
-      h2(l10n) Create empty account
+      h2(l10n) Create new account
 
       p(l10n) Encrypt your new account file: {{walletfile}}
 
@@ -67,7 +67,7 @@ section.col-xs-12.content(ng-controller="RegisterCtrl")
 
   .row.auth-form-container.col-sm-offset-2.col-sm-8.col-md-offset-3.col-md-6(ng-show='mode=="register_with_secret" || oldUserBlob')
     .auth-form-wrapper
-      h2(l10n) Create account with secret key
+      h2(l10n) Restore account from secret key
 
       form(name='useSecretKey', ng-submit='submitSecretKeyForm()')
         .form-group(ng-class="{'field-error': registerForm.secret.$error.rpMasterKey && registerForm.secret.$dirty}")
@@ -79,7 +79,7 @@ section.col-xs-12.content(ng-controller="RegisterCtrl")
           rp-popover-placement="bottom"
           rp-popover-title="Using a secret key"
           rp-popover-trigger="hover"
-          l10n-data-content="This will create a new Ripple account from your secret key.")
+          l10n-data-content="This will restore your {{native_currency_name}} account from your secret key.")
 
           input.form-control#secretKey(type="password", name="secretKey"
           ng-model="secretKey", rp-master-key, required, rp-focus)

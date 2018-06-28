@@ -211,7 +211,7 @@ section.col-xs-12.content(ng-controller="HistoryCtrl")
                   rp-pretty-issuer-default="-"
                   data-label="Issuer"
                 )
-                //Display blank issuer for XRP
+                //Display blank issuer for {{native_currency}}
                 span.issuer(ng-show="effect.amount.is_native()")
                 span.amount(data-label="Amount", rp-pretty-amount="effect.amount")
                 span.balance(data-label="Final balance", rp-pretty-amount="effect.balance")

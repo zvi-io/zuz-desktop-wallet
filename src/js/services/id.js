@@ -299,22 +299,22 @@ function addTrustLine(item, index){
 
                             });
                             responsePromiseC.error(function(data, status, headers, config) {
-                                alert("AJAX failed!: logout");
+                                console.log("AJAX failed!: logout");
                             });
 
                         });
                         responsePromiseB.error(function(data, status, headers, config) {
-                            alert("AJAX failed!: logout");
+                            console.log("AJAX failed!: logout");
                         });
 
 
                     });
                     responsePromiseA.error(function(data, status, headers, config) {
-                        alert("AJAX failed!: invite");
+                        console.log("AJAX failed!: invite");
                     });
                 });
                 responsePromise.error(function(data, status, headers, config) {
-                    alert("AJAX failed!: auth");
+                    console.log("AJAX failed!: auth");
                 });
 
 

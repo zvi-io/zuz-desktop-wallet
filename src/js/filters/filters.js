@@ -80,7 +80,7 @@ module.filter('rpamount', function () {
  * If the input is neither an Amount or Currency object it will be passed to
  * Amount#from_json to try to interpret it.
  */
-module.filter('rpcurrency', function () {
+module.filter('rpcurrency', ['$rootScope', function ($scope) {
   return function (input) {
     if (!input) return "";
 
@@ -91,10 +91,12 @@ module.filter('rpcurrency', function () {
       var amount = Amount.from_json(input);
       currency = amount.currency();
     }
-
-    return currency.to_human();
+    var formatted_currency_code = currency.to_human();
+      // console.log("output " + formatted_currency_code);
+      // console.log("Translated" + $scope.translateCoin(formatted_currency_code));
+      return $scope.translateCoin(formatted_currency_code);
   };
-});
+}]);
 
 /**
  * Get the currency issuer.

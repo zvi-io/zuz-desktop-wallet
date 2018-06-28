@@ -45,7 +45,7 @@ section.single.ddpage.content(ng-controller="TxCtrl", ng-switch="state")
             dt
               span(l10n) Network fee paid
               span :
-            dd {{transaction.Fee | rpamount}} XRP
+            dd {{transaction.Fee | rpamount}} {{translateCoin('XRP')}}
           dl.details.half
             group(ng-show="transaction.DestinationTag !== null && transaction.DestinationTag !== undefined")
               dt

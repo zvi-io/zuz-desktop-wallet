@@ -15,7 +15,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
         input.form-control#send_destination(
         name='send_destination', type='text'
         rp-combobox="recipient_query"
-        placeholder='Enter a Ripple address or contact'
+        placeholder='Enter a {{native_currency_name}} address or contact'
         ng-model='send.recipient', rp-not-me, rp-dest, rp-dest-address, rp-dest-contact
         rp-dest-email, rp-dest-loading="recipient_loading"
         required
@@ -27,7 +27,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
           .error(rp-error-on='required', l10n)
             | Please enter a recipient.
           .error(rp-error-on='rpDest', l10n)
-            | Recipient should be a contact or Ripple address.
+            | Recipient should be a contact or {{native_currency_name}} address.
           .error(rp-error-on='rpNotMe', l10n)
             | Recipient cannot be this wallet address.
     ul.tagsLinks
@@ -141,20 +141,20 @@ section.col-xs-12.content(ng-controller='SendCtrl')
         .error(rp-error-on='rpAmount', l10n) Not a valid amount.
         .error(rp-error-on='rpAmountPositive', l10n) Amount must be greater than zero.
         .error(rp-error-on='rpAmountXrpLimit', l10n)
-          | You are either trying to send too little or too much XRP.
-          | Minimum amount is 0.000001 XRP and maximum amount is 100 billion XRP.
+          | You are either trying to send too little or too much {{translateCoin('XRP')}}.
+          | Minimum amount is 0.000001 {{translateCoin('XRP')}} and maximum amount is 100 billion {{translateCoin('XRP')}}.
         .error(rp-error-on='rpMaxAmount', l10n)
           | This transaction exceeds your balance, you can send
-          |  a max. of {{account.max_spend | rpamount:{rel_precision: 0} }} XRP
+          |  a max. of {{account.max_spend | rpamount:{rel_precision: 0} }} {{translateCoin('XRP')}}
         .error(ng-show="send.recipient_info.disallow_xrp && send.currency_code=='XRP'", l10n)
-          | Recipient does not allow XRP payments. Are you sure you want to send XRP anyway?
+          | Recipient does not allow {{translateCoin('XRP')}} payments. Are you sure you want to send XRP anyway?
         .notice(ng-show="send.trust_limit", l10n) {{send.recipient | rpcontactname}}
           | trusts you for {{send.trust_limit | rpamount}} {{send.trust_limit | rpcurrency}}.
     .row
       .col-xs-12.col-sm-6.col-md-4(ng-show="onlineMode && send.currency_code == 'XRP'")
         button#sendXrpButton.btn.btn-block.btn-success.submit(type='submit'
         ng-disabled='sendForm.$invalid || send.self || !send.recipient_resolved || account.max_spend.to_number() < send.amount * 1000000', l10n)
-          | Send XRP
+          | Send {{native_currency}}
     .row
       .col-xs-12.col-sm-6.col-md-4(ng-show="!onlineMode")
         button#sendXrpButton.btn.btn-block.btn-success.submit(type='submit'
@@ -164,7 +164,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
       //- Messages
       p.literal(ng-show="send.fund_status == 'insufficient-xrp'", l10n)
         | Destination account is unfunded; send at least
-        |  {{send.xrp_deficiency | rpamount}} XRP to fund it.
+        |  {{send.xrp_deficiency | rpamount}} {{translateCoin('XRP')}} to fund it.
         a(href="https://ripple.com/wiki/Reserves", target="_blank", l10n)
           | More information
       p.literal(ng-show="send.path_status == 'checking'", rp-spinner="4", l10n)
@@ -231,14 +231,14 @@ section.col-xs-12.content(ng-controller='SendCtrl')
 
   group.mode-wait-path(ng-show='mode=="wait_path" && account.Balance && connected')
     p.literal(rp-spinner="4", l10n)
-      | Ripple is calculating a path for your payment.
+      | {{native_currency_name}} is calculating a path for your payment.
 
   //- N3. Confirmation page
 
   group.mode-confirm(ng-show='mode=="confirm" && ((account.Balance && connected) || !onlineMode)')
     p.literal(l10n) You are sending
       span(ng-show="onlineMode")  {{ (send.alt.amount || send.currency) | rpcurrency}}
-      span(ng-show="!onlineMode")  {{ send.currency }}
+      span(ng-show="!onlineMode")  {{ translateCoin(send.currency) }}
       |  to
     .dest_feedback
       .recipient(ng-show='send.recipient_name') {{send.recipient_name}}

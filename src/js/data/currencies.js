@@ -210,7 +210,7 @@ module.exports = [
   {value: 'ETH', name: 'Ethereum', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'VIA', name: 'Viacoin', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'XMR', name: 'Monero', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
-  {value: 'BTG', name: 'Bitcion Gold', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
+  {value: 'BTG', name: 'Bitcoin Gold', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'BCH', name: 'Bitcoin Cash', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'IOT', name: 'IOTA', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},
   {value: 'XLM', name: 'Stellar Lumens', display: true, custom_trade_currency_dropdown: true, standard_precision: 4, order: 0},

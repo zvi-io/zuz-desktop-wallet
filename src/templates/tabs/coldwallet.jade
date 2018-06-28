@@ -16,7 +16,7 @@ container(ng-controller="ColdWalletCtrl")
               dt Sequence Number
               dd {{sequenceNumber}}
               dt Network Fee
-              dd {{networkFee}} XRP
+              dd {{networkFee}} {{translateCoin('XRP')}}
               dt Regular Key Enabled
               dd {{regularKeyEnabled}}
       //div.col-xs-12.col-sm-7
@@ -56,7 +56,7 @@ container(ng-controller="ColdWalletCtrl")
                 th Value
             tbody
               tr
-                td XRP
+                td {{translateCoin('XRP')}}
                 td
                 td {{xrpBalance}}
               tr.available

@@ -2,7 +2,7 @@
 div#wrapper
   // Header
   header
-    h1(ng-show="['t-login','t-register', 't-submit', 't-coldwallet'].indexOf($route.current.tabClass) !== -1", l10n) Welcome to the Zvi Network, a marketplace for global exchange
+    h1(ng-show="['t-login','t-register', 't-submit', 't-coldwallet'].indexOf($route.current.tabClass) !== -1", l10n) Welcome to the {{native_currency_name}} Network, a marketplace for global exchange
     include ./_navbar.jade
   .container
 

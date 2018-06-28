@@ -28,7 +28,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               | This contact already exists.
         .form-group
           div
-            label(for='address_desktop', l10n) {{capitalize(native_currency)}} Address
+            label(for='address_desktop', l10n) {{native_currency_name}} Address
             .spinnerEnabledInput
               input.form-control.input-lg.address#address_desktop(
                 name='address_desktop', type='text', step='any'
@@ -42,9 +42,9 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
                 rp-autofill='$routeParams.to', rp-autofill-on='addform_visible = true'
                 required)
             .errorGroup(rp-errors='address_desktop')
-              .error(rp-error-on='required', l10n) Please enter a {{capitalize(native_currency)}} address.
-              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{capitalize(native_currency)}} address and/or the same Destination tag.
-              .error(rp-error-on='rpDest', l10n) Not a valid {{capitalize(native_currency)}} address.
+              .error(rp-error-on='required', l10n) Please enter a {{native_currency_name}} address.
+              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{native_currency_name}} address and/or the same Destination tag.
+              .error(rp-error-on='rpDest', l10n) Not a valid {{native_currency_name}} address.
         .form-group
           div
             label(for='dt_desktop', l10n) Destination tag
@@ -59,7 +59,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               rp-autofill='$routeParams.dt')
             .errorGroup(rp-errors='dt_desktop')
               .error(rp-error-on='rpStdt', l10n) Invalid destination tag
-              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{capitalize(native_currency)}} address and/or the same Destination tag.
+              .error(rp-error-on='rpUnique', l10n) You already have a contact with the same {{native_currency_name}} address and/or the same Destination tag.
         .row
           .col-xs-8.col-sm-8.col-md-9.text-left
             button.btn.btn-success.btn-block.submit.custom-btn(type='submit', ng-disabled='addForm.$invalid', l10n) Add contact
@@ -106,7 +106,7 @@ section.col-xs-12.content(ng-controller="ContactsCtrl")
               ng-enter="update($index)")
             .errorGroup(rp-errors='editaddress')
               .error(rp-error-on='rpUnique', l10n) You already have this address.
-              .error(rp-error-on='rpDest', l10n) Not a valid {{capitalize(native_currency)}} address.
+              .error(rp-error-on='rpDest', l10n) Not a valid {{native_currency_name}} address.
             .form-group
               label(for="contact_dt", l10n) Destination tag
               input.form-control.dt.inline#contact_dt(

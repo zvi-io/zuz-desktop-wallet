@@ -25,6 +25,7 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   };
   // Global function for translating currencies
   $scope.native_currency = "ZVI";
+  $scope.native_currency_name = "Zvi";
   $scope.translateCoin = function(coin){
       switch(coin) {
           case 'XRP':
