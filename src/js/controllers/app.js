@@ -27,10 +27,13 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   $scope.native_currency = "ZVI";
   $scope.native_currency_name = "Zvi";
   $scope.translateCoin = function(coin){
+      console.log("To be Translated: " + JSON.stringify(coin));
       switch(coin) {
           case 'XRP':
           case 'ripple':
               return $scope.native_currency;
+          case 'XRP - Ripples':
+              return $scope.native_currency + " - " + $scope.native_currency_name + "s";
           default:
               return coin;
       }

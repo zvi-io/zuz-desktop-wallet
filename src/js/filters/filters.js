@@ -99,6 +99,19 @@ module.filter('rpcurrency', ['$rootScope', function ($scope) {
 }]);
 
 /**
+ * Translate XRP to Network Native currency
+ *
+ * Input is passed to global translateCoin() method for translation
+ *
+ */
+module.filter('rptranslate', ['$rootScope', function ($scope) {
+    return function (input) {
+        if (!input) return "";
+        return $scope.translateCoin(input);
+    };
+}]);
+
+/**
  * Get the currency issuer.
  */
 module.filter('rpissuer', function () {

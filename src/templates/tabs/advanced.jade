@@ -43,7 +43,7 @@ section.col-sm-12.content(ng-controller="AdvancedCtrl")
               rp-amount-positive
               rp-amount-xrp-limit
               rp-amount-currency='{{xrp.name}}')
-              span.input-group-addon(ng-bind="xrp.name")
+              span.input-group-addon(ng-bind="xrp.name | rptranslate")
             .col-sm-3.col-md-3
               button.btn.btn-block.btn-success.btn-xs.submit#saveMaxNetworkFee(type='submit', ng-disabled='maxnetworkfeeForm.$invalid', l10n) Save
             .col-sm-3.col-md-3.text-center#cancel

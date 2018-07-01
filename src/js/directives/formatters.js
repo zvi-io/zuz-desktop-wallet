@@ -211,7 +211,7 @@ module.directive('rpBindColorAmount', function () {
 module.directive('rpCurrency', function () {
   return {
     restrict: 'A',
-    compile: function (element, attr, linker) {
+    compile: function (element, attr, linker, $rootScope) {
       return function (scope, element, attr) {
         scope.$watch(attr.rpCurrency, function (input) {
           var currency;
@@ -249,10 +249,10 @@ module.directive('rpCurrency', function () {
 
             var el = $('<abbr></abbr>')
                   .attr('title', helpText)
-                  .text(mainText);
+                  .text(scope.$root.translateCoin(mainText));
             element.empty().append(el);
           } else {
-            element.empty().text(mainText);
+            element.empty().text(scope.$root.translateCoin(mainText));
           }
         });
       };

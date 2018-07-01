@@ -133,7 +133,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
           rp-amount-positive
           rp-amount-xrp-limit
           rp-amount-xrp-limit-currency='{{send.currency}}')
-          span.input-group-addon(ng-bind="send.currency_force")
+          span.input-group-addon(ng-bind="send.currency_force | rptranslate")
       .errorGroup(rp-errors='send_amount_currency')
         .error(rp-error-on='rpRestrictCurrencies', l10n) {{send.recipient | rpcontactname}} can't receive this currency.
       .errorGroup(rp-errors='send_amount')
