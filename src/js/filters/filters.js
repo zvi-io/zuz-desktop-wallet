@@ -112,6 +112,20 @@ module.filter('rptranslate', ['$rootScope', function ($scope) {
 }]);
 
 /**
+ * Replace XRP with Network Native currency
+ *
+ * Replaces XRP occurrences in input string
+ *
+ */
+module.filter('rpreplace', ['$rootScope', function ($scope) {
+    return function (input) {
+        if (!input) return "";
+        var replaced = input.replace(/XRP/g, $scope.native_currency);
+        return replaced;
+    };
+}]);
+
+/**
  * Get the currency issuer.
  */
 module.filter('rpissuer', function () {

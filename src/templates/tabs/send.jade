@@ -89,7 +89,6 @@ section.col-xs-12.content(ng-controller='SendCtrl')
         ng-model='send.invoiceId'
         ng-pattern='/^[0-9A-Fa-f]{64}$/')
         .errorGroup.error(ng-show="sendForm.invoice_id.$error.pattern") Invoice ID must be 256-bit hash.
-
     .form-group(ng-show="send.currency_choices.length")
       label(for='send_amount', l10n) Recipient will receive
       .row.amount(ng-if="!send.currency_force")
@@ -178,11 +177,11 @@ section.col-xs-12.content(ng-controller='SendCtrl')
       p.literal(ng-show="send.path_status == 'pending' && send.currency_code == 'XRP' && onlineMode", rp-spinner="4", l10n)
         | Calculating alternatives
       p.literal(ng-show="send.path_status == 'no-path' && send.currency_code != 'XRP'", l10n)
-        | You cannot send {{send.amount}} {{send.currency}} to
+        | You cannot send {{send.amount}} {{send.currency | rptranslate}} to
         |  {{send.recipient}}. Either your account has insufficient funds,
-        |  or {{send.recipient}} doesn't accept {{send.currency}}.
+        |  or {{send.recipient}} doesn't accept {{send.currency | rptranslate}}.
       p.literal(ng-show="send.path_status == 'no-path' && send.currency_code == 'XRP' && send.sender_insufficient_xrp", l10n)
-        | You cannot send {{send.amount}} {{send.currency}} to
+        | You cannot send {{send.amount}} {{send.currency | rptranslate}} to
         | {{send.recipient}}. Your account has insufficient funds.
       p.literal(ng-show="send.path_status == 'error-no-currency'", l10n)
         | There are no valid currency choices for this destination.

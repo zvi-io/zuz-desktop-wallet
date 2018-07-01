@@ -11,7 +11,7 @@ group.result-malformed(ng-show='tx_result=="malformed"')
   h2.tx-status(l10n) Transaction failed
   p(ng-switch="engine_result")
     span(ng-switch-default, l10n)
-      | Error code: {{engine_result}} - {{engine_result_message}}
+      | Error code: {{engine_result}} - {{engine_result_message | rpreplace}}
 group.result-malformed(ng-show='tx_result=="failure"')
   h2.tx-status(l10n) Transaction failed
   p(ng-switch="engine_result")
@@ -25,14 +25,14 @@ group.result-malformed(ng-show='tx_result=="claim"')
     span(ng-switch-when="tecNO_DST_INSUF_XRP", l10n)
       | Error code: Insufficient {{translateCoin('XRP')}} sent to destination [tecNO_DST_INSUF_XRP].
     span(ng-switch-default, l10n)
-      | Error: {{engine_result_message}}
+      | Error: {{engine_result_message | rpreplace}}
 group.result-failed(ng-show='tx_result=="failed"')
   h2.tx-status(l10n) Transaction failed
   p(ng-switch="engine_result")
     span(ng-switch-when="terNO_LINE", l10n)
       | Error code: You have no trust line in this currency [terNO_LINE].
     span(ng-switch-default, l10n)
-      | Your transaction failed: {{engine_result_message}}
+      | Your transaction failed: {{engine_result_message | rpreplace}}
 group.result-failed(ng-show='tx_result=="local"')
   h2.tx-status(l10n) Transaction failed
   p(ng-switch="engine_result")
