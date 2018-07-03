@@ -398,7 +398,7 @@ module.directive('rpSpinner', [function() {
 
           // Spinner for input field
           if (element.is('input')) {
-            element.after('<div class="inputSpinner"></div>');
+            element.before('<div class="inputSpinner"></div>');
             spinner.spin(element.parent().find('.inputSpinner')[0]);
           }
 

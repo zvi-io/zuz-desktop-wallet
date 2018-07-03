@@ -68,7 +68,7 @@ ExchangeTab.prototype.angular = function (module)
 
       $scope.xrp = {
         name: xrpCurrency.to_human({full_name:$scope.currencies_all_keyed["XRP"].name}),
-        code: "ZVI", //xrpCurrency.get_iso(),
+        code: $scope.native_currency, //xrpCurrency.get_iso(),
         currency: xrpCurrency
       };
 

@@ -66,7 +66,7 @@ section.col-xs-12.content(ng-controller="ExchangeCtrl")
             span.currency  {{alt.amount | rpcurrency }}
             .ex (
               span.rate {{alt.rate | rpamount:{precision: 20, min_precision: 6, max_sig_digits: 20} }}
-              span.pair {{exchange.currency_code}}/{{alt.amount | rpcurrency}}
+              span.pair {{exchange.currency_code | rptranslate}}/{{alt.amount | rpcurrency}}
               | )
           button.btn.btn-block.btn-success(type="submit", ng-disabled='exchangeForm.$invalid', ng-click="exchange.alt = alt", l10n)
             | Exchange {{ alt.amount | rpcurrency }}
@@ -86,7 +86,7 @@ section.col-xs-12.content(ng-controller="ExchangeCtrl")
   //- N2. Waiting for path
 
   group.mode-wait-path(ng-show='mode=="wait_path" && account.Balance')
-    p.throbber.literal(l10n) The Zvi Network is calculating a path for your conversion.
+    p.throbber.literal(l10n) The {{native_currency}} Network is calculating a path for your conversion.
 
   //- N3. Confirmation page
 

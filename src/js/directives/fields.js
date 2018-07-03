@@ -39,6 +39,13 @@ module.directive('rpCombobox', [function () {
           var complFn = scope.$eval(attrs.rpCombobox);
           if ("function" !== typeof complFn) {
             var options = complFn;
+            // scope.$watch(options, function(value) {
+            //     for(var i = 0; i < options.length; i++){
+            //         console.log("option: " + options[i] + " Type: " + typeof options[i]);
+            //         options[i] = scope.$root.translateCoin(options[i]);
+            //     }
+            //     console.log("Options watched: " + JSON.stringify(options));
+            // });
             complFn = webutil.queryFromOptions(complFn);
             scope.$watch(options, function(value) {
               setCompletions(complFn());
@@ -181,7 +188,7 @@ module.directive('rpCombobox', [function () {
               additional = '<span class="additional">' + completion.additional + '</span>';
             }
           }
-
+          // val = scope.$root.translateCoin(val);
           if (re) val = val.replace(re, '<u>$1</u>');
 
           var completionHtml;
@@ -223,7 +230,7 @@ module.directive('rpCombobox', [function () {
 
         scope.$apply(function () {
           ngModel.$setViewValue(name || val);
-          ngModel.$modelValue = val;
+          ngModel.$modelValue = val; //scope.$root.translateBack(val);
           el.val(val);
           setVisible(false);
         });
