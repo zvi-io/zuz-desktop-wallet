@@ -160,7 +160,7 @@ module.directive('rpPrettyIdentity', ['$timeout', function ($timeout) {
         // XXX Set title to identity
 
         element.popover('destroy');
-        var content = 'Ripple address ' + scope.identity;
+        var content = 'Address ' + scope.identity;
         var options = {  content: content,
           trigger: 'manual', placement: 'top',
           container: 'body',
