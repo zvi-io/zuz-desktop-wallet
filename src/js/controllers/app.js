@@ -20,11 +20,11 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   reset();
 
   var account;
-  $scope.capitalize = function(string){
-      return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-  };
+  // $scope.capitalize = function(string){
+  //     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  // };
 
-  $('.completions').on('click', function(e) {console.log(e)});
+  // $('.completions').on('click', function(e) {console.log(e)});
   // Global function for translating currencies
   $scope.native_currency = "ZVI";
   $scope.native_currency_name = "Zvi";
@@ -38,7 +38,7 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
               return $scope.native_currency + " - " + $scope.native_currency + "s";
           default:
               if(coin.indexOf('XRP') !== -1){
-
+                  coin = coin.replace(/XRP/g, $scope.native_currency)
               }
               return coin;
       }
@@ -52,6 +52,9 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
           case $scope.native_currency + ' - ' + $scope.native_currency + 's':
               return 'XRP - Ripples';
           default:
+              if(coin.indexOf($scope.native_currency) !== -1){
+                  coin = coin.replace(/$scope.native_currency/g, 'XRP')
+              }
               return coin;
       }
   };

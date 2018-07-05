@@ -21,7 +21,7 @@ module.directive('rpCombobox', [function () {
     restrict: 'A',
     require: '?ngModel',
     link: function (scope, el, attrs, ngModel) {
-      // Translate for view
+      // Translate for view only
       ngModel.$formatters.push(function(modelValue) {
         if(modelValue){
             var translated = scope.$root.translateCoin(modelValue);
@@ -29,19 +29,11 @@ module.directive('rpCombobox', [function () {
         }
         return translated;
       });
-      // Translate back to XRP for model
-      // ngModel.$parsers.push(function(viewValue) {
-      //     if(viewValue){
-      //         var original = scope.$root.translateBack(viewValue);
-      //         console.log(original);
-      //     }
-      //     return original;
-      // });
 
       var keyCursor = -1;
         // var util = require('util');
         // console.log(util.inspect(scope.$root));
-        el.wrap('<div class="rp-combobox">');
+      el.wrap('<div class="rp-combobox">');
       el.attr('autocomplete', 'off');
       var cplEl = $('<ul class="completions"></ul>').hide();
       el.parent().append(cplEl);
@@ -57,13 +49,7 @@ module.directive('rpCombobox', [function () {
           var complFn = scope.$eval(attrs.rpCombobox);
           if ("function" !== typeof complFn) {
             var options = complFn;
-            // scope.$watch(options, function(value) {
-            //     for(var i = 0; i < options.length; i++){
-            //         console.log("option: " + options[i] + " Type: " + typeof options[i]);
-            //         options[i] = scope.$root.translateCoin(options[i]);
-            //     }
-            //     console.log("Options watched: " + JSON.stringify(options));
-            // });
+
             complFn = webutil.queryFromOptions(complFn);
             scope.$watch(options, function(value) {
               setCompletions(complFn());
@@ -206,17 +192,18 @@ module.directive('rpCombobox', [function () {
               additional = '<span class="additional">' + completion.additional + '</span>';
             }
           }
-          // Translate to native currency
-          val = scope.$root.translateCoin(val);
+
           if (re) val = val.replace(re, '<u>$1</u>');
 
           var completionHtml;
 
           if(completion.label){
-            completionHtml = $('<li><span class="val">' + completion.label + '</span>' + additional + '</li>');
+            completionHtml = $('<li><span class="val">' + scope.$root.translateCoin(completion.label) + '</span>' + additional + '</li>');
             $(completionHtml).find('.val').attr('name', val);
           }else{
-           completionHtml = $('<li><span class="val">' + val + '</span>' + additional + '</li>');
+            // Translate to native currency
+            val = scope.$root.translateCoin(val);
+            completionHtml = $('<li><span class="val">' + val + '</span>' + additional + '</li>');
           }
 
           el.parent().find('.completions').append(completionHtml);
@@ -249,7 +236,7 @@ module.directive('rpCombobox', [function () {
 
         scope.$apply(function () {
           ngModel.$setViewValue(name || val);
-          ngModel.$modelValue = val; //scope.$root.translateBack(val);
+          ngModel.$modelValue = scope.$root.translateBack(val);
           el.val(val);
           setVisible(false);
         });
