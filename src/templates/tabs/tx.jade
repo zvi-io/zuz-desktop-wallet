@@ -21,7 +21,7 @@ section.single.ddpage.content(ng-controller="TxCtrl", ng-switch="state")
             dt
               span(l10n) Amount sent
               span :
-            dd {{amountSent | rpamount}} {{amountSent | rpcurrency}}
+            dd {{amountSent | rpamount}} {{amountSent | rpcurrency | rptranslate}}
             dt
               span(l10n) Currency sent
               span :
@@ -34,7 +34,7 @@ section.single.ddpage.content(ng-controller="TxCtrl", ng-switch="state")
             dt
               span(l10n) Amount received
               span :
-            dd {{transaction.Amount | rpamount}} {{transaction.Amount | rpcurrency}}
+            dd {{transaction.Amount | rpamount}} {{transaction.Amount | rpcurrency| rptranslate}}
             dt
               span(l10n) Currency received
               span :

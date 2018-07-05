@@ -55,7 +55,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                 .desc(ng-switch="entry.transaction.type")
                   .transaction(ng-switch-when="sent")
                     span(l10n) You sent
-                      strong.nowrap  {{entry.transaction.amount | rpamount}} {{entry.transaction.amount | rpcurrency}}
+                      strong.nowrap  {{entry.transaction.amount | rpamount}} {{entry.transaction.amount | rpcurrency| rptranslate}}
                       |  to
                       span.address(title="{{entry.transaction.counterparty}}")  {{entry.transaction.counterparty | rpcontactnamefull }}
                     include ../tabs/history/_effects.jade
@@ -63,7 +63,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                     span.address(title="{{entry.transaction.counterparty}}", l10n)
                       span {{entry.transaction.counterparty | rpcontactnamefull }}
                       |  sent you
-                      strong.nowrap  {{entry.transaction.amount | rpamount:{reference_date:entry.dateRaw} }} {{entry.transaction.amount | rpcurrency}}
+                      strong.nowrap  {{entry.transaction.amount | rpamount:{reference_date:entry.dateRaw} }} {{entry.transaction.amount | rpcurrency| rptranslate}}
                     include ../tabs/history/_effects.jade
                   .transaction(ng-switch-when="exchange")
                     include ../tabs/history/_effects.jade
@@ -71,7 +71,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                     span.address(title="{{entry.transaction.counterparty}}", l10n)
                       | {{entry.transaction.counterparty | rpcontactname}} now trusts you for
                     strong.nowrap  {{entry.transaction.amount | rpamount}}
-                      | {{entry.transaction.amount | rpcurrency}}
+                      | {{entry.transaction.amount | rpcurrency| rptranslate}}
                     include ../tabs/history/_effects.jade
                   .transaction(ng-switch-when="trusting")
                     span(l10n) You have now connected to the gateway&#32;
@@ -79,7 +79,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                         | {{entry.transaction.counterparty | rpcontactname}}
                       span(l10n-inc) &#32;for&#32;
                       strong.nowrap {{entry.transaction.amount | rpamount:{reference_date:entry.dateRaw} }}
-                        | {{entry.transaction.amount | rpcurrency}}
+                        | {{entry.transaction.amount | rpcurrency| rptranslate}}
                       | .
                     include ../tabs/history/_effects.jade
                   .transaction(ng-switch-when="offernew")
@@ -87,10 +87,10 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                   .transaction(ng-switch-when="offercancel")
                     span(l10n) You cancelled an order accepting&#32;
                       strong.nowrap {{entry.transaction.pays | rpamount}}
-                        | {{entry.transaction.pays | rpcurrency}}
+                        | {{entry.transaction.pays | rpcurrency| rptranslate}}
                       |  for&#32;
                       strong.nowrap {{entry.transaction.gets | rpamount}}
-                        | {{entry.transaction.gets | rpcurrency}}
+                        | {{entry.transaction.gets | rpcurrency| rptranslate}}
                     include ../tabs/history/_effects.jade
                   .transaction(ng-switch-when="accountset", l10n)
                     | Account details have been changed

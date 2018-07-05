@@ -21,9 +21,27 @@ module.directive('rpCombobox', [function () {
     restrict: 'A',
     require: '?ngModel',
     link: function (scope, el, attrs, ngModel) {
-      var keyCursor = -1;
+      // Translate for view
+      ngModel.$formatters.push(function(modelValue) {
+        if(modelValue){
+            var translated = scope.$root.translateCoin(modelValue);
+            console.log(translated);
+        }
+        return translated;
+      });
+      // Translate back to XRP for model
+      // ngModel.$parsers.push(function(viewValue) {
+      //     if(viewValue){
+      //         var original = scope.$root.translateBack(viewValue);
+      //         console.log(original);
+      //     }
+      //     return original;
+      // });
 
-      el.wrap('<div class="rp-combobox">');
+      var keyCursor = -1;
+        // var util = require('util');
+        // console.log(util.inspect(scope.$root));
+        el.wrap('<div class="rp-combobox">');
       el.attr('autocomplete', 'off');
       var cplEl = $('<ul class="completions"></ul>').hide();
       el.parent().append(cplEl);
@@ -188,7 +206,8 @@ module.directive('rpCombobox', [function () {
               additional = '<span class="additional">' + completion.additional + '</span>';
             }
           }
-          // val = scope.$root.translateCoin(val);
+          // Translate to native currency
+          val = scope.$root.translateCoin(val);
           if (re) val = val.replace(re, '<u>$1</u>');
 
           var completionHtml;

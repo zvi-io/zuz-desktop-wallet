@@ -72,7 +72,7 @@ ul.effects(ng-show="entry.effects")
       | .
     span(ng-switch-when="trust_change_local", l10n, rp-span-spacing)
       | You have changed
-      span  {{effect.limit | rpcurrency}}
+      span  {{effect.limit | rpcurrency| rptranslate}}
       | trust for
       span(rp-pretty-identity="effect.counterparty")
       | from
@@ -83,7 +83,7 @@ ul.effects(ng-show="entry.effects")
     span(ng-switch-when="trust_change_remote", l10n, rp-span-spacing)
       span(rp-pretty-identity="effect.counterparty")
       | changed the
-      span {{effect.limit | rpcurrency}}
+      span {{effect.limit | rpcurrency| rptranslate}}
       | trust from
       span {{effect.prevLimit | rpamount:{reference_date: entry.dateRaw} }}
       | to
