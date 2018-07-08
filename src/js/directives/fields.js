@@ -39,8 +39,6 @@ module.directive('rpCombobox', [function () {
       });
 
       var keyCursor = -1;
-        // var util = require('util');
-        // console.log(util.inspect(scope.$root));
       el.wrap('<div class="rp-combobox">');
       el.attr('autocomplete', 'off');
       var cplEl = $('<ul class="completions"></ul>').hide();
@@ -57,7 +55,6 @@ module.directive('rpCombobox', [function () {
           var complFn = scope.$eval(attrs.rpCombobox);
           if ("function" !== typeof complFn) {
             var options = complFn;
-
             complFn = webutil.queryFromOptions(complFn);
             scope.$watch(options, function(value) {
               setCompletions(complFn());
@@ -190,7 +187,6 @@ module.directive('rpCombobox', [function () {
         keyCursor = -1;
         completions.forEach(function (completion) {
           var additional = '';
-            console.log("Completion: " + JSON.stringify(completion));
             if ("string" === typeof completion) {
             val = completion;
           } else {
@@ -246,7 +242,6 @@ module.directive('rpCombobox', [function () {
           ngModel.$setViewValue(name || val);
           ngModel.$render();
           ngModel.$modelValue = val;
-          //ngModel.$modelValue = scope.$root.translateBack(val);
           el.val(val);
           setVisible(false);
         });

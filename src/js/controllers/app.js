@@ -20,11 +20,6 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   reset();
 
   var account;
-  // $scope.capitalize = function(string){
-  //     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-  // };
-
-  // $('.completions').on('click', function(e) {console.log(e)});
   // Global function for translating currencies
   $scope.native_currency = "ZVI";
   $scope.native_currency_name = "Zvi";

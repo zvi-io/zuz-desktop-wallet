@@ -260,7 +260,7 @@ SendTab.prototype.angular = function (module)
               if (data.receive_currencies &&
                   // We need to make sure the destination account hasn't changed
                   send.recipient_address === requestedRecipientAddress) {
-                send.currency_choices_constraints.accountLines = data.receive_currencies;
+                  send.currency_choices_constraints.accountLines = data.receive_currencies;
 
                 // add XRP if it's allowed
                 if (!$scope.send.recipient_info.disallow_xrp) {
@@ -296,6 +296,7 @@ SendTab.prototype.angular = function (module)
         // The possible currencies are the intersection of all provided currency
         // constraints.
         currencies = _.values(send.currency_choices_constraints);
+
         if (currencies.length == 1) {
           currencies = currencies[0];
         } else {
@@ -328,7 +329,7 @@ SendTab.prototype.angular = function (module)
         }
       }
 
-      $scope.send.currency_choices = currencies;
+        $scope.send.currency_choices = currencies;
       $scope.update_currency();
     };
 

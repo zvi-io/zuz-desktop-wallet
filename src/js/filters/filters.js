@@ -92,9 +92,7 @@ module.filter('rpcurrency', ['$rootScope', function ($scope) {
       currency = amount.currency();
     }
     var formatted_currency_code = currency.to_human();
-      // console.log("output " + formatted_currency_code);
-      // console.log("Translated" + $scope.translateCoin(formatted_currency_code));
-      return formatted_currency_code;//$scope.translateCoin(formatted_currency_code);
+    return formatted_currency_code;
   };
 }]);
 
