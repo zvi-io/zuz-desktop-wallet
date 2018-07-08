@@ -624,7 +624,7 @@ TradeTab.prototype.angular = function(module)
 
       $timeout(function(){
         if($scope.order.currency_pair_label){
-          $($document[0].querySelector('#currency_pair')).val($scope.order.currency_pair_label);
+          $($document[0].querySelector('#currency_pair')).val($scope.translateCoin($scope.order.currency_pair_label));
         }
       },0);
 
@@ -943,7 +943,7 @@ TradeTab.prototype.angular = function(module)
     $scope.$watch('first_currency_selected', function() {
       $scope.first_issuer_selected = '';
       // Translate native currency back to XRP
-      $scope.first_currency_selected  = $scope.translateBack($scope.first_currency_selected);
+      // $scope.first_currency_selected  = $scope.translateBack($scope.first_currency_selected);
       if($scope.first_currency_selected == 'XRP') {
         $scope.gateway_change_form.first_iss.$setValidity('rpDest', true);
         $scope.disable_first_issuer = true;
@@ -970,7 +970,7 @@ TradeTab.prototype.angular = function(module)
     $scope.$watch('second_currency_selected', function () {
       $scope.second_issuer_selected = '';
       // Translate native currency back to XRP
-      $scope.second_currency_selected  = $scope.translateBack($scope.second_currency_selected);
+      // $scope.second_currency_selected  = $scope.translateBack($scope.second_currency_selected);
       if($scope.second_currency_selected == 'XRP') {
         $scope.gateway_change_form.second_iss.$setValidity('rpDest', true);
         $scope.disable_second_issuer = true;

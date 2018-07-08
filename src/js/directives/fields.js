@@ -22,12 +22,20 @@ module.directive('rpCombobox', [function () {
     require: '?ngModel',
     link: function (scope, el, attrs, ngModel) {
       // Translate for view only
-      ngModel.$formatters.push(function(modelValue) {
+      ngModel.$formatters.unshift(function(modelValue) {
         if(modelValue){
             var translated = scope.$root.translateCoin(modelValue);
-            console.log(translated);
+            console.log("Formatted: " + translated);
         }
         return translated;
+      });
+      // Translate back for model only
+      ngModel.$parsers.unshift(function(modelValue) {
+          if(modelValue){
+              var translated = scope.$root.translateBack(modelValue);
+              console.log("Parsed: " + translated);
+          }
+          return translated;
       });
 
       var keyCursor = -1;
@@ -182,8 +190,8 @@ module.directive('rpCombobox', [function () {
         keyCursor = -1;
         completions.forEach(function (completion) {
           var additional = '';
-
-          if ("string" === typeof completion) {
+            console.log("Completion: " + JSON.stringify(completion));
+            if ("string" === typeof completion) {
             val = completion;
           } else {
             val = completion.name;
@@ -236,7 +244,9 @@ module.directive('rpCombobox', [function () {
 
         scope.$apply(function () {
           ngModel.$setViewValue(name || val);
-          ngModel.$modelValue = scope.$root.translateBack(val);
+          ngModel.$render();
+          ngModel.$modelValue = val;
+          //ngModel.$modelValue = scope.$root.translateBack(val);
           el.val(val);
           setVisible(false);
         });
