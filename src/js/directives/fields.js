@@ -25,7 +25,7 @@ module.directive('rpCombobox', [function () {
       ngModel.$formatters.unshift(function(modelValue) {
         if(modelValue){
             var translated = scope.$root.translateCoin(modelValue);
-            console.log("Formatted: " + translated);
+            // console.log("Formatted: " + translated);
         }
         return translated;
       });
@@ -33,7 +33,7 @@ module.directive('rpCombobox', [function () {
       ngModel.$parsers.unshift(function(modelValue) {
           if(modelValue){
               var translated = scope.$root.translateBack(modelValue);
-              console.log("Parsed: " + translated);
+              // console.log("Parsed: " + translated);
           }
           return translated;
       });

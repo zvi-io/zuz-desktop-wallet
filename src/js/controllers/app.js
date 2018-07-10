@@ -20,39 +20,11 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   reset();
 
   var account;
-  // Global function for translating currencies
-  $scope.native_currency = "ZVI";
-  $scope.native_currency_name = "Zvi";
-  $scope.translateCoin = function(coin){
-      // console.log("To be Translated: " + JSON.stringify(coin));
-      switch(coin) {
-          case 'XRP':
-          case 'ripple':
-              return $scope.native_currency;
-          case 'XRP - Ripples':
-              return $scope.native_currency + " - " + $scope.native_currency + "s";
-          default:
-              if(coin && coin.indexOf('XRP') !== -1){
-                  coin = coin.replace(/XRP/g, $scope.native_currency)
-              }
-              return coin;
-      }
-  };
-  $scope.translateBack = function(coin){
-      // console.log("To be Translated: " + JSON.stringify(coin));
-      switch(coin) {
-          case $scope.native_currency:
-          case $scope.native_currency_name:
-              return 'XRP';
-          case $scope.native_currency + ' - ' + $scope.native_currency + 's':
-              return 'XRP - Ripples';
-          default:
-              if(coin && coin.indexOf($scope.native_currency) !== -1){
-                  coin = coin.replace(/$scope.native_currency/g, 'XRP')
-              }
-              return coin;
-      }
-  };
+  $scope.native_currency = Options.native_currency;
+  $scope.native_currency_name = Options.native_currency_name;
+  $scope.translateCoin = Options.translateCoin;
+  $scope.translateBack = Options.translateBack;
+
   // Global sequence variable to be incremented after every transaction
   $scope.$watch('userBlob', function() {
     if ($scope.userBlob.data && $scope.userCredentials.username) {
