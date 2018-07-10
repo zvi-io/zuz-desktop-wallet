@@ -32,7 +32,7 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
           case 'XRP - Ripples':
               return $scope.native_currency + " - " + $scope.native_currency + "s";
           default:
-              if(coin.indexOf('XRP') !== -1){
+              if(coin && coin.indexOf('XRP') !== -1){
                   coin = coin.replace(/XRP/g, $scope.native_currency)
               }
               return coin;
@@ -47,7 +47,7 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
           case $scope.native_currency + ' - ' + $scope.native_currency + 's':
               return 'XRP - Ripples';
           default:
-              if(coin.indexOf($scope.native_currency) !== -1){
+              if(coin && coin.indexOf($scope.native_currency) !== -1){
                   coin = coin.replace(/$scope.native_currency/g, 'XRP')
               }
               return coin;
