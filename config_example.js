@@ -11,13 +11,13 @@ var Options = {
     local_signing: true,
 
     servers: [
-      { host: 's-west.zvi.io', port: 443, secure: true },
-      { host: 's-east.zvi.io', port: 443, secure: true }
+      { host: 's-west.zvi.io', port: 443, secure: false },
+      { host: 's-east.zvi.io', port: 443, secure: false }
     ]
   },
 
   ilpAdminPass: "passwordtoilpapi",
-  
+
   // Number of transactions each page has in balance tab notifications
   transactions_per_page: 50,
 
@@ -33,7 +33,73 @@ var Options = {
   gateway_max_limit: 1000000000,
 
   // Should only be used for development purposes
-  persistent_auth: false
+  persistent_auth: false,
+  native_currency: 'ZVI',
+  native_currency_name: 'Zvi',
+  conversions: [
+    {original: 'XSD', translated: 'XSDR'},
+    {original: 'XIM', translated: 'XIMM'}
+  ],
+  translateCoin: function (coin) {
+    if(typeof native_currency === 'undefined' || typeof native_currency_name === 'undefined') {
+      native_currency = Options.native_currency;
+      native_currency_name = Options.native_currency_name;
+    }
+    switch (coin) {
+      case 'XRP':
+      case 'ripple':
+        return native_currency;
+      case 'XRP - Ripples':
+        return native_currency + " - " + native_currency + "s";
+      default:
+        if (coin && typeof coin === 'string') {
+          if (coin.indexOf('XRP') !== -1) {
+            coin = coin.replace(/XRP/g, native_currency);
+            return coin;
+          }
+          // Convert all coins to their longer currency codes
+          var conv = Options.conversions;
+          if (conv && conv.length > 0) {
+            for (var i = 0; i < conv.length; i++) {
+              if (coin.indexOf(conv[i].translated) === -1 && coin.indexOf(conv[i].original) !== -1) {
+                coin = coin.replace(new RegExp(conv[i].original, "g"), conv[i].translated)
+              }
+            }
+          }
+        }
+        return coin;
+    }
+  },
+  translateBack: function (coin) {
+    if(typeof native_currency === 'undefined' || typeof native_currency_name === 'undefined') {
+      native_currency = Options.native_currency;
+      native_currency_name = Options.native_currency_name;
+    }
+    switch (coin) {
+      case native_currency:
+      case native_currency_name:
+        return 'XRP';
+      case native_currency + ' - ' + native_currency + 's':
+        return 'XRP - Ripples';
+      default:
+        if (coin && typeof coin === 'string') {
+          if (coin.indexOf(native_currency) !== -1) {
+            coin = coin.replace(new RegExp(native_currency, "g"), 'XRP');
+            return coin;
+          }
+          // Convert all coins to their longer currency codes
+          var conv = Options.conversions;
+          if (conv && conv.length > 0) {
+            for (var i = 0; i < conv.length; i++) {
+              if (coin.indexOf(conv[i].translated) !== -1) {
+                coin = coin.replace(new RegExp(conv[i].translated, "g"), conv[i].original)
+              }
+            }
+          }
+        }
+        return coin;
+    }
+  }
 };
 
 // Load client-side overrides
