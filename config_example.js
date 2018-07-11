@@ -38,7 +38,7 @@ var Options = {
   native_currency_name: 'Zvi',
   conversions: [
     {original: 'XSD', translated: 'XSDR'},
-    {original: 'XIM', translated: 'XIMM'}
+    {original: 'XSY', translated: 'XSYN'}
   ],
   translateCoin: function (coin) {
     if(typeof native_currency === 'undefined' || typeof native_currency_name === 'undefined') {
