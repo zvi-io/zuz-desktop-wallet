@@ -11,8 +11,8 @@ var Options = {
     local_signing: true,
 
     servers: [
-      { host: 's-west.zvi.io', port: 443, secure: false },
-      { host: 's-east.zvi.io', port: 443, secure: false }
+      { host: 's-west.zvi.io', port: 443, secure: true },
+      { host: 's-east.zvi.io', port: 443, secure: true }
     ]
   },
 
@@ -38,7 +38,9 @@ var Options = {
   native_currency_name: 'Zvi',
   conversions: [
     {original: 'XSD', translated: 'XSDR'},
-    {original: 'XSY', translated: 'XSYN'}
+    {original: 'XSY', translated: 'XSYN'},
+    {original: 'USD', translated: 'USDT'},
+    {original: 'TUS', translated: 'TUSD'}
   ],
   translateCoin: function (coin) {
     if(typeof native_currency === 'undefined' || typeof native_currency_name === 'undefined') {
