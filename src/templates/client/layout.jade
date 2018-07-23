@@ -11,6 +11,7 @@ div#wrapper
 
     // Footer
     footer.row
+      div Current wallet mode value {{walletMode}}
       .col-sm-3
         a(href="https://github.com/zvi-io/zvi-desktop-wallet/releases", target="_blank", l10n)
           | Version: {{version}}
@@ -21,4 +22,5 @@ div#wrapper
          //a(href="https://osim91w.oneskyapp.com/collaboration/project/185104", target="_blank", l10n) Help Translate
          a(href="#/lang/he_IL") עברית
          a(href="#/lang/en") English
+         a(href="", ng-click="changeMode()") {{modeText}}
 

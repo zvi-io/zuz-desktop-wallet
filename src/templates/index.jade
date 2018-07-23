@@ -14,9 +14,9 @@ html.no-js(ng-app='rp', ng-controller='AppCtrl', ng-class='[$route.current.tabCl
 <!--<![endif]-->
 
 html(ng-app='rp', ng-controller='AppCtrl', ng-class='[$route.current.tabClass, $route.current.pageMode]')
-  head(ng-cloak)
+  head
     meta(charset='utf-8')
-    title {{native_currency_name}} Desktop Wallet
+    title(ng-bind="walletName")
     link(rel='apple-touch-icon', href='img/mobile/icon60.png')
     link(rel='apple-touch-icon', sizes='76x76', href='img/mobile/icon76.png')
     link(rel='apple-touch-icon', sizes='120x120', href='img/mobile/icon120.png')

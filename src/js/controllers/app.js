@@ -13,17 +13,37 @@ var rewriter = require('../util/jsonrewriter'),
 var module = angular.module('app', []);
 
 module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
-                              'rpKeychain', '$route', '$timeout', 'rpFileDialog',
+                              'rpKeychain', '$route', '$timeout', '$location', 'rpFileDialog',
                               function ($scope, $compile, $id, $net,
-                                        keychain, $route, $timeout, fileDialog)
+                                        keychain, $route, $timeout, $location, fileDialog)
 {
   reset();
-
   var account;
+
+  // Set default wallet mode to 'simple'
+  $scope.walletMode = false;
+  $scope.modeText = 'Advanced Mode';
+  $scope.changeMode = function (){
+    $scope.walletMode = !$scope.walletMode;
+    if($scope.walletMode){
+      $scope.modeText = 'Simple Mode';
+    } else {
+      $scope.modeText = 'Advanced Mode';
+      // Close balances details page when switching modes
+      Object.keys($scope.balances).map(function(key, index) {
+        $scope.balances[key]['show'] = false;
+      });
+    }
+    // Switch to Overview page
+    $location.path('/balance');
+  };
+
+
   $scope.native_currency = Options.native_currency;
   $scope.native_currency_name = Options.native_currency_name;
   $scope.translateCoin = Options.translateCoin;
   $scope.translateBack = Options.translateBack;
+  $scope.walletName = $scope.native_currency_name + " Desktop Wallet";
 
   // Global sequence variable to be incremented after every transaction
   $scope.$watch('userBlob', function() {

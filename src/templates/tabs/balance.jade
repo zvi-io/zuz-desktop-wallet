@@ -56,7 +56,7 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
           .balancebox.currency-non-native(ng-repeat="entry in balances", ng-class="'currency-' + (entry.total | rpcurrency | rptranslate | lowercase)")
             .total.row.row-padding-small
               .lbl.col-xs-8
-                a(href="", ng-click="entry.show=!entry.show")
+                a(href="", ng-click="toggleDetail(entry)", ng-class="{'disable-link': !walletMode}")
                   i(class="icon fa fa-money", ng-class="'fa-' + (entry.total | rpcurrency | rptranslate | lowercase)")
                   span(rp-currency="entry.total", rp-currency-full)
               .balance.col-xs-2

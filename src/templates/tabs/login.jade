@@ -7,12 +7,14 @@ section.col-xs-12.content(ng-controller="LoginCtrl")
           a(href="", ng-click="mode='open'") Login/Create Account
         li(ng-class="{active: mode=='readOnly'}")
           a(href="", ng-click="mode='readOnly'") Read Only Mode
-        li(ng-class="{active: mode=='coldwallet'}")
+        li(ng-class="{active: mode=='coldwallet'}", ng-if="walletMode")
           a(href="", ng-click="mode='coldwallet'") Cold Wallet
-        li(ng-class="{active: mode=='submittxn'}")
+        li(ng-class="{active: mode=='submittxn'}", ng-if="walletMode")
           a(href="#/submit", ng-click="mode='submittxn'") Submit Txn
-        li(ng-class="{active: mode=='serversettings'}")
-          a(href="#/advanced", ng-click="mode='serversettings'") Server Settings  
+        li(ng-class="{active: mode=='serversettings'}", ng-if="walletMode")
+          a(href="#/advanced", ng-click="mode='serversettings'") Server Settings
+        li
+          a(href="", ng-click="changeMode()", class="mode-button") {{modeText}}
 
   .row.auth-form-container(ng-show="mode=='open'")
     .col-md-offset-2.col-md-8

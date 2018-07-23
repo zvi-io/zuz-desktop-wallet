@@ -28,6 +28,12 @@ BalanceTab.prototype.angular = function(module) {
       } else {
         rpNW.initTray();
       }
+      // Toggle balance detail display
+      $scope.toggleDetail = function (entry) {
+        if($scope.walletMode){
+          entry.show = !entry.show;
+        }
+      };
     }
   ]);
 };

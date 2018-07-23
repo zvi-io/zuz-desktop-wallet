@@ -16,7 +16,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
           li#nav-exchange(ng-class="{active: $route.current.mainMenu == 'exchange' || $route.current.mainMenu == 'trade'}", ng-show="ripple_exchange_selection_trade || readOnly")
             a(href="#/trade", l10n) Trade
           li#nav-fund(ng-class="{active: $route.current.mainMenu == 'fund'}")
-            a(href="#/trust", l10n) Trust Lines
+            a(href="#/trust", ng-if="walletMode", l10n) Trust Lines
         ul.nav.navbar-nav.navbar-right
           li
             span(class="serverStatus {{connected ? 'online' : 'offline'}} {{serverLoad}}"
