@@ -80,6 +80,21 @@ HistoryTab.prototype.angular = function (module) {
       }
     };
 
+    // Remove gateways transactions from history in simple mode
+    $scope.$watch('walletMode', function() {
+      if ($scope.walletMode) {
+        $scope.types.gateways.checked = true;
+        // Restore gateways filter display
+        if ($scope.orderedTypes.indexOf('gateways') == -1){
+          $scope.orderedTypes.splice(2, 0, 'gateways');
+        }
+      } else {
+        $scope.types.gateways.checked = false;
+        // Hide gateways filter display
+        $scope.orderedTypes.splice(2, 1);
+      }
+    });
+
     $scope.orderedTypes = ['sent','received','gateways','trades','orders','other'];
 
     if (store.get('ripple_history_type_selections')) {

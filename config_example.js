@@ -57,7 +57,6 @@ var Options = {
         if (coin && typeof coin === 'string') {
           if (coin.indexOf('XRP') !== -1) {
             coin = coin.replace(/XRP/g, native_currency);
-            return coin;
           }
           // Convert all coins to their longer currency codes
           var conv = Options.conversions;
@@ -87,7 +86,6 @@ var Options = {
         if (coin && typeof coin === 'string') {
           if (coin.indexOf(native_currency) !== -1) {
             coin = coin.replace(new RegExp(native_currency, "g"), 'XRP');
-            return coin;
           }
           // Convert all coins to their longer currency codes
           var conv = Options.conversions;

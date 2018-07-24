@@ -71,6 +71,8 @@ AccountFlagsTab.prototype.angular = function(module) {
         description: 'Account Txn ID'
       }
     };
+    // Translate flag description
+    $scope.flags.DisallowXRP.description = $scope.translateCoin($scope.flags.DisallowXRP.description);
 
     $scope.saveTransaction = function(tx, hash, blob) {
       var sequenceNumber = (Number(tx.tx_json.Sequence));

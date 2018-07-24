@@ -110,6 +110,21 @@ module.filter('rptranslate', ['$rootScope', function ($scope) {
 }]);
 
 /**
+ * Remove BaseX text in basic mode
+ */
+module.filter('rpfilterbasex', ['$rootScope', function ($scope) {
+  return function (input) {
+    if (!input) return "";
+    if(!$scope.walletMode){
+      return input.replace(/BaseX/g, '');
+    } else {
+      return input;
+    }
+
+  };
+}]);
+
+/**
  * Replace XRP with Network Native currency
  *
  * Replaces XRP occurrences in input string

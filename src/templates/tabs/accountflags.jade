@@ -4,9 +4,9 @@ section.col-xs-12.content(ng-controller="AccountFlagsCtrl")
 
   .notification-wrapper
     div(ng-repeat="(flag, opts) in flags")
-      .alert.alert-info(ng-show="opts.saving && onlineMode", l10n) Updating {{flag}} flag...
-      .alert.alert-success(ng-show="notif == flag + 'Updated' && onlineMode", l10n) {{flag}} flag updated
-      .alert.alert-danger(ng-show="notif == flag + 'Failed' && onlineMode", l10n) {{flag}} flag update failed. {{opts.engine_result}}: {{opts.engine_result_message}}
+      .alert.alert-info(ng-show="opts.saving && onlineMode", l10n) Updating {{flag | rptranslate}} flag...
+      .alert.alert-success(ng-show="notif == flag + 'Updated' && onlineMode", l10n) {{flag | rptranslate}} flag updated
+      .alert.alert-danger(ng-show="notif == flag + 'Failed' && onlineMode", l10n) {{flag | rptranslate}} flag update failed. {{opts.engine_result}}: {{opts.engine_result_message}}
 
   .row
     .col-sm-3
@@ -29,7 +29,7 @@ section.col-xs-12.content(ng-controller="AccountFlagsCtrl")
             .descriptor {{opts.description}}
             .row.accountflags-form-row(ng-hide="opts.edit")
               .col-sm-3
-                .description(l10n) {{flag}}
+                .description(l10n) {{flag | rptranslate}}
               .col-sm-6
                 .description(ng-show="opts.enabled", l10n) Enabled
                 .description(ng-hide="opts.enabled", l10n) Disabled
@@ -39,7 +39,7 @@ section.col-xs-12.content(ng-controller="AccountFlagsCtrl")
                 a.btn.btn-cancel.btn-block(href="", ng-click="opts.edit = true", ng-hide="edit.saving", l10n) edit
             .row.row-padding-small.accountflags-form-row(ng-show="opts.edit")
               .col-sm-3
-                .description(l10n) {{flag}}
+                .description(l10n) {{flag | rptranslate}}
               .col-sm-4
                 div.helperInput
                   label

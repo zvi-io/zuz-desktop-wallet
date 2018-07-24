@@ -26,13 +26,13 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                   l10n-rp-popover-content="Disconnected from the Zvi Network")
               span(ng-switch-when='highLoad'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
-                  l10n-rp-popover-content="Network fees are currently higher than your maximum. Fee: {{ fee | rpamount }} XRP. <a href='#/advanced'>Change fees</a>")
+                  l10n-rp-popover-content="Network fees are currently higher than your maximum. Fee: {{ fee | rpamount }} {{native_currency}}. <a href='#/advanced'>Change fees</a>")
               span(ng-switch-when='mediumLoad'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
-                  l10n-rp-popover-content="'Network fees are currently higher than normal. Fee: {{ fee | rpamount }} XRP'")
+                  l10n-rp-popover-content="'Network fees are currently higher than normal. Fee: {{ fee | rpamount }} {{native_currency}}'")
               span(ng-switch-when='lowLoad'
                   rp-popover, rp-popover-placement='bottom', rp-popover-trigger='hover', rp-popover-delay
-                  l10n-rp-popover-content="Connected to the Zvi Network. Fee: {{ fee | rpamount }} XRP")
+                  l10n-rp-popover-content="Connected to the Zvi Network. Fee: {{ fee | rpamount }} {{native_currency}}")
               span(ng-switch-when='connected'
                   rp-popover, rp-popover-placement="bottom", rp-popover-trigger="hover", rp-popover-delay
                   l10n-rp-popover-content="Connected to the Zvi Network.")
@@ -112,6 +112,10 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
               li: a(href="#/security", ng-hide="readOnly", l10n)
                 i.icon-settings
                 |  Settings
+              li.divider
+              li: a(href="", ng-click="changeMode()")
+                i
+                | {{modeText}}
               li.divider
               li: a.logout(ng-click='logout()', l10n)
                 i.icon-logout

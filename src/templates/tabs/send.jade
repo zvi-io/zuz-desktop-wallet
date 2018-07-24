@@ -33,7 +33,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
     ul.tagsLinks
       li
         a(href="", ng-click="send.show_dt_field = true"
-        ng-hide="send.show_dt_field", l10n)
+        ng-hide="send.show_dt_field", ng-if="walletMode", l10n)
           | Show destination tag
     .row.form-group(ng-show='send.show_dt_field')
       .col-xs-12.col-sm-8.col-md-6
@@ -79,7 +79,7 @@ section.col-xs-12.content(ng-controller='SendCtrl')
           option(ng-repeat='option in field.options', ng-bind='option.label', value='{{option.value}}', ng-selected='option.selected', ng-disabled='option.disabled')
     ul.invoiceId
       li
-        a(href="", ng-click="send.show_invoice_id = true", ng-hide="send.show_invoice_id", l10n) Show Invoice ID
+        a(href="", ng-click="send.show_invoice_id = true", ng-hide="send.show_invoice_id", ng-if="walletMode", l10n) Show Invoice ID
     .row.form-group(name="invoice_form", ng-show="send.show_invoice_id")
       .col-xs-12.col-sm-8.col-md-6
         label(for="invoice_id", l10n) Invoice ID
