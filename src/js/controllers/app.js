@@ -38,7 +38,6 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
     $location.path('/balance');
   };
 
-
   $scope.native_currency = Options.native_currency;
   $scope.native_currency_name = Options.native_currency_name;
   $scope.translateCoin = Options.translateCoin;

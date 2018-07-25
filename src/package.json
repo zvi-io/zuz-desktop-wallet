@@ -1,7 +1,7 @@
 {
   "main": "index.html",
   "name": "ZviDesktopWallet",
-  "version": "1.5.1",
+  "version": "1.6.0-rc2",
   "description": "Zvi Desktop Wallet",
   "single-instance": false,
   "window": {
