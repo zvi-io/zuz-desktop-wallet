@@ -202,11 +202,11 @@ module.directive('rpCombobox', [function () {
           var completionHtml;
 
           if(completion.label){
-            completionHtml = $('<li><span class="val">' + scope.$root.translateCoin(completion.label) + '</span>' + additional + '</li>');
+            completionHtml = $('<li><span class="val">' + scope.$root.removeBaseX(scope.$root.translateCoin(completion.label)) + '</span>' + additional + '</li>');
             $(completionHtml).find('.val').attr('name', val);
           }else{
             // Translate to native currency
-            val = scope.$root.translateCoin(val);
+            val = scope.$root.removeBaseX(scope.$root.translateCoin(val));
             completionHtml = $('<li><span class="val">' + val + '</span>' + additional + '</li>');
           }
 

@@ -41,7 +41,7 @@ section.col-xs-12.content(ng-controller="TradeCtrl")
               name="first_currency", type="text"
               rp-combobox="currencies", rp-combobox-select
               ng-model="first_currency_selected")
-          .col-sm-6
+          .col-sm-6(ng-if="walletMode")
             .description(l10n) Base Gateway
             input.form-control(
               name="first_iss", type="text"
@@ -58,7 +58,7 @@ section.col-xs-12.content(ng-controller="TradeCtrl")
               name="second_currency", type="text"
               rp-combobox="currencies", rp-combobox-select
               ng-model="second_currency_selected")
-          .col-sm-6
+          .col-sm-6(ng-if="walletMode")
             .description(l10n) Counter Gateway
             input.form-control(
               name="second_iss", type="text",

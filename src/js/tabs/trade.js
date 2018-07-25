@@ -624,7 +624,7 @@ TradeTab.prototype.angular = function(module)
 
       $timeout(function(){
         if($scope.order.currency_pair_label){
-          $($document[0].querySelector('#currency_pair')).val($scope.translateCoin($scope.order.currency_pair_label));
+          $($document[0].querySelector('#currency_pair')).val($scope.removeBaseX($scope.translateCoin($scope.order.currency_pair_label)));
         }
       },0);
 
@@ -962,6 +962,8 @@ TradeTab.prototype.angular = function(module)
           });
         });
       }
+      // Set automatic default gateway to BaseX
+      $scope.first_issuer_selected = 'BaseX';
       pairsQueryUtils.replaceKeyAddressByGatewayName($scope.first_iss);
     });
 
@@ -987,6 +989,8 @@ TradeTab.prototype.angular = function(module)
           });
         });
       }
+      // Set automatic default gateway to BaseX
+      $scope.second_issuer_selected = 'BaseX';
       pairsQueryUtils.replaceKeyAddressByGatewayName($scope.second_iss);
     });
 

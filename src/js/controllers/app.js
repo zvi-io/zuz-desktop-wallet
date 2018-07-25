@@ -45,6 +45,16 @@ module.controller('AppCtrl', ['$rootScope', '$compile', 'rpId', 'rpNetwork',
   $scope.translateBack = Options.translateBack;
   $scope.walletName = $scope.native_currency_name + " Desktop Wallet";
 
+  // Remove BaseX in basic mode
+  $scope.removeBaseX = function (text) {
+    if(!$scope.walletMode){
+      return text.replace(/BaseX/g, '');
+    } else {
+      return text;
+    }
+  };
+
+
   // Global sequence variable to be incremented after every transaction
   $scope.$watch('userBlob', function() {
     if ($scope.userBlob.data && $scope.userCredentials.username) {
