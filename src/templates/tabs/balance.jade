@@ -60,7 +60,7 @@ section.col-xs-12.content(ng-controller="BalanceCtrl")
                   i(class="icon fa fa-money", ng-class="'fa-' + (entry.total | rpcurrency | rptranslate | lowercase)")
                   span(rp-currency="entry.total", rp-currency-full)
               .balance.col-xs-2
-                a(href="", ng-click="entry.show=!entry.show") {{ entry.total | rpamount:{precision: 20, min_precision: 5, max_sig_digits: 20} }}
+                a(href="", ng-click="toggleDetail(entry)", ng-class="{'disable-link': !walletMode}") {{ entry.total | rpamount:{precision: 20, min_precision: 5, max_sig_digits: 20} }}
             //- TODO Remember selections
             .component.row.row-padding-small(ng-repeat="(issuer, component) in entry.components", ng-show="entry.show")
               .head
