@@ -14,6 +14,6 @@
 #### Dev Mode
 - Run `gulp` in root directory to start up dev mode
 #### Build
-- Run `gulp packages` in your command line to compile the production ready client executable
+- Switch to use Node v4.9.1 then run `gulp packages` in your command line to compile the production ready client executable
 - Your desktop client is in the `packages/ZviDesktopWallet` directory
 - Modify the `platforms` array in gulpfile.js (~line 350) to set the platforms targeted for compilation

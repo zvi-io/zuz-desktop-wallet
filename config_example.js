@@ -11,8 +11,8 @@ var Options = {
     local_signing: true,
 
     servers: [
-      { host: 's-west.zvi.io', port: 443, secure: true },
-      { host: 's-east.zvi.io', port: 443, secure: true }
+      { host: 's.altnet.rippletest.net', port: 51233, secure: true },
+      { host: 's.altnet.rippletest.net', port: 51233, secure: true }
     ]
   },
 
